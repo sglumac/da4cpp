@@ -1,0 +1,110 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 19
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "hidden": true,
+      "description": "Default base preset for all configurations",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_CXX_STANDARD": "20",
+        "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+        "CMAKE_CXX_EXTENSIONS": "OFF",
+        "CMAKE_CXX_CLANG_TIDY": "clang-tidy"
+      }
+    },
+    {
+      "name": "debug",
+      "inherits": "default",
+      "description": "Debug configuration with debugging symbols",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "ENABLE_LOGGING": "ON",
+        "ENABLE_SANITIZERS": "ON"
+      }
+    },
+    {
+      "name": "release",
+      "inherits": "default",
+      "description": "Release configuration with optimizations",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "ENABLE_LOGGING": "OFF",
+        "ENABLE_OPTIMIZATIONS": "ON"
+      }
+    },
+    {
+      "name": "relwithdebinfo",
+      "inherits": "default",
+      "description": "Release with Debug Info for profiling",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "ENABLE_LOGGING": "OFF",
+        "ENABLE_PROFILING": "ON"
+      }
+    },
+    {
+      "name": "debug-windows",
+      "inherits": "debug",
+      "description": "Debug configuration for Windows builds",
+      "generator": "Ninja Multi-Config",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/toolchains/windows.cmake"
+      }
+    },
+    {
+      "name": "release-linux",
+      "inherits": "release",
+      "description": "Release configuration for Linux builds",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/toolchains/linux.cmake"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "build-debug",
+      "configurePreset": "debug",
+      "description": "Build Debug configuration",
+      "jobs": 8
+    },
+    {
+      "name": "build-release",
+      "configurePreset": "release",
+      "description": "Build Release configuration",
+      "jobs": 8
+    },
+    {
+      "name": "build-relwithdebinfo",
+      "configurePreset": "relwithdebinfo",
+      "description": "Build Release with Debug Info",
+      "jobs": 8
+    },
+    {
+      "name": "build-debug-windows",
+      "configurePreset": "debug-windows",
+      "description": "Build Debug configuration for Windows"
+    },
+    {
+      "name": "build-release-linux",
+      "configurePreset": "release-linux",
+      "description": "Build Release configuration for Linux"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "test-debug",
+      "configurePreset": "debug",
+      "description": "Run tests in Debug configuration",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}

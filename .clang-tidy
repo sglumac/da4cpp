@@ -1,0 +1,27 @@
+---
+Checks:          '*,
+                  -llvmlibc*,
+                  -performance-avoid-endl,
+                  -modernize-use-trailing-return-type,
+                  -fuchsia-*,
+                  -altera-*'
+WarningsAsErrors: ''
+HeaderFileExtensions:
+  - ''
+  - h
+  - hh
+  - hpp
+  - hxx
+ImplementationFileExtensions:
+  - c
+  - cc
+  - cpp
+  - cxx
+HeaderFilterRegex: ''
+FormatStyle:     file
+SystemHeaders:   false
+
+CheckOptions:
+  - key: misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic
+    value: 'true'
+
