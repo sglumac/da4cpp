@@ -2,16 +2,18 @@ cmake_minimum_required(VERSION 3.19)
 project(
   da4cpp
   VERSION 0.1
-  LANGUAGES CXX
+  LANGUAGES C CXX
 )
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_C_COMPILER clang)
+set(CMAKE_CXX_COMPILER clang++)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0 -Wall -Werror")
 set(CMAKE_CXX_CLANG_TIDY "clang-tidy")
-
+option(ENABLE_TEST_COVERAGE "Enable test coverage" OFF)
 
 if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
   message(FATAL_ERROR "In-source builds not allowed. \
@@ -38,7 +40,11 @@ find_package(Catch2 3 REQUIRED)
 include(CTest)
 include(Catch)
 
+message("After include(Catch)")
+
 enable_testing()
+
+message("After enable_testing()")
 
 add_subdirectory(da4cpp)
 add_subdirectory(documentation)

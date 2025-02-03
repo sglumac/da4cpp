@@ -35,7 +35,7 @@ std::string get_symbol_name(const CXCursor &cursor) {
   return toString(clang_getCursorSpelling(cursor));
 }
 
-Symbol from_cursor_and_name(CXCursor cursor, const std::string& symbolName, SymbolType symbolType) {
+Symbol from_cursor_and_name(const CXCursor &cursor, const std::string& symbolName, SymbolType symbolType) {
   const CXSourceLocation location = clang_getCursorLocation(cursor);
   CXFile file = nullptr;
   unsigned line = 0;
@@ -51,7 +51,7 @@ Symbol from_cursor_and_name(CXCursor cursor, const std::string& symbolName, Symb
           .symbolType = symbolType};
 }
 
-Symbol from_cursor(CXCursor cursor, SymbolType symbolType) {
+Symbol from_cursor(const CXCursor &cursor, SymbolType symbolType) {
   return from_cursor_and_name(cursor, get_symbol_name(cursor), symbolType);
 }
 
@@ -99,7 +99,7 @@ bool is_struct_reference(const CXCursor &cursor) {
 }
 
 // NOLINTNEXTLINE(misc-unused-parameters,bugprone-easily-swappable-parameters)
-CXChildVisitResult visit_struct_definition(CXCursor cursor, CXCursor parent, CXClientData clientData) {
+CXChildVisitResult visit_struct_definition(CXCursor cursor, [[maybe_unused]]CXCursor parent, CXClientData clientData) {
   auto &dependencies = *static_cast<Dependencies *>(clientData);
   if (is_struct_reference(cursor)) {
     const Symbol referenced{type_declaration_from_cursor(clang_getCursorReferenced(cursor))};
@@ -136,7 +136,7 @@ bool is_function_reference(const CXCursor &cursor) {
 }
 
 // NOLINTNEXTLINE(misc-unused-parameters,bugprone-easily-swappable-parameters)
-CXChildVisitResult visit_function_definition(CXCursor cursor, CXCursor parent, CXClientData clientData) {
+CXChildVisitResult visit_function_definition(CXCursor cursor, [[maybe_unused]]CXCursor parent, CXClientData clientData) {
   auto &dependencies = *static_cast<Dependencies *>(clientData);
   if (is_function_reference(cursor)) {
     const Symbol referenced{function_declaration_from_cursor(clang_getCursorReferenced(cursor))};
@@ -162,7 +162,7 @@ SymbolAndDependencies process_function_definition(const CXCursor &cursor) {
 
 // Recursive function to visit nodes in the AST
 // NOLINTNEXTLINE(misc-unused-parameters,bugprone-easily-swappable-parameters)
-CXChildVisitResult visit_node(CXCursor cursor, CXCursor parent, CXClientData clientData) {
+CXChildVisitResult visit_node(CXCursor cursor, [[maybe_unused]]CXCursor parent, CXClientData clientData) {
   const CursorHandlers handlers{{{is_function_definition, process_function_definition},
                                  {is_function_declaration, process_function_declaration},
                                  {is_struct_declaration, process_struct_declaration},

@@ -1,18 +1,16 @@
 {
   "version": 3,
-  "cmakeMinimumRequired": {
-    "major": 3,
-    "minor": 19
-  },
   "configurePresets": [
     {
-      "name": "default",
+      "name": "clang-config",
       "hidden": true,
-      "description": "Default base preset for all configurations",
-      "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build/${presetName}",
+      "environment": {
+        "PROJECT_WARNINGS": "-Wall -Wextra -Werror"
+      },
+      "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
-        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++",
         "CMAKE_CXX_STANDARD": "20",
         "CMAKE_CXX_STANDARD_REQUIRED": "ON",
         "CMAKE_CXX_EXTENSIONS": "OFF",
@@ -20,91 +18,46 @@
       }
     },
     {
-      "name": "debug",
-      "inherits": "default",
-      "description": "Debug configuration with debugging symbols",
+      "name": "clang-release-config",
+      "inherits": "clang-config",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug",
-        "ENABLE_LOGGING": "ON",
-        "ENABLE_SANITIZERS": "ON"
+        "CMAKE_BUILD_TYPE": "Release"
       }
     },
     {
-      "name": "release",
-      "inherits": "default",
-      "description": "Release configuration with optimizations",
+      "name": "clang-debug-config",
+      "inherits": "clang-config",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release",
-        "ENABLE_LOGGING": "OFF",
-        "ENABLE_OPTIMIZATIONS": "ON"
+        "CMAKE_BUILD_TYPE": "DEBUG"
       }
     },
     {
-      "name": "relwithdebinfo",
-      "inherits": "default",
-      "description": "Release with Debug Info for profiling",
+      "name": "clang-coverage-config",
+      "inherits": "clang-debug-config",
+      "environment": {
+        "COMPILER_COVERAGE_FLAGS": "-fprofile-instr-generate -fcoverage-mapping",
+        "SANITIZER_FLAGS": "-fsanitize=address,undefined"
+      },
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
-        "ENABLE_LOGGING": "OFF",
-        "ENABLE_PROFILING": "ON"
-      }
-    },
-    {
-      "name": "debug-windows",
-      "inherits": "debug",
-      "description": "Debug configuration for Windows builds",
-      "generator": "Ninja Multi-Config",
-      "cacheVariables": {
-        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/toolchains/windows.cmake"
-      }
-    },
-    {
-      "name": "release-linux",
-      "inherits": "release",
-      "description": "Release configuration for Linux builds",
-      "cacheVariables": {
-        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/toolchains/linux.cmake"
+        "CMAKE_CXX_FLAGS": "$env{PROJECT_WARNINGS} $env{COMPILER_COVERAGE_FLAGS} $env{SANITIZER_FLAGS}"
+                            
       }
     }
   ],
   "buildPresets": [
     {
-      "name": "build-debug",
-      "configurePreset": "debug",
-      "description": "Build Debug configuration",
-      "jobs": 8
+      "name": "clang-release-build",
+      "configurePreset": "clang-release-config"
     },
     {
-      "name": "build-release",
-      "configurePreset": "release",
-      "description": "Build Release configuration",
-      "jobs": 8
-    },
-    {
-      "name": "build-relwithdebinfo",
-      "configurePreset": "relwithdebinfo",
-      "description": "Build Release with Debug Info",
-      "jobs": 8
-    },
-    {
-      "name": "build-debug-windows",
-      "configurePreset": "debug-windows",
-      "description": "Build Debug configuration for Windows"
-    },
-    {
-      "name": "build-release-linux",
-      "configurePreset": "release-linux",
-      "description": "Build Release configuration for Linux"
+      "name": "clang-coverage-build",
+      "configurePreset": "clang-coverage-config"
     }
   ],
   "testPresets": [
     {
-      "name": "test-debug",
-      "configurePreset": "debug",
-      "description": "Run tests in Debug configuration",
-      "output": {
-        "outputOnFailure": true
-      }
+      "name": "clang-coverage-test",
+      "configurePreset": "clang-coverage-config"
     }
   ]
 }
