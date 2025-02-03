@@ -57,6 +57,9 @@
   "testPresets": [
     {
       "name": "clang-coverage-test",
+      "environment": {
+        "LLVM_PROFILE_FILE": "${sourceDir}/build/da4cpp.profraw"
+      },
       "configurePreset": "clang-coverage-config"
     }
   ]
