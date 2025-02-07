@@ -27,6 +27,9 @@ jobs:
           path: "**/cpm_modules"
           key: ${{ github.workflow }}-cpm-modules-${{ hashFiles('**/CMakeLists.txt', '**/*.cmake') }}
 
+      - name: catch2
+        run: sudo apt-get update && apt-get install -y catch2
+
       - name: configure
         run: cmake --preset=clang-coverage-config
 
