@@ -28,13 +28,22 @@ jobs:
           key: ${{ github.workflow }}-cpm-modules-${{ hashFiles('**/CMakeLists.txt', '**/*.cmake') }}
 
       - name: configure
-        run: cmake -S . -B build --preset clang-coverage-config
+        run: cmake --preset=clang-coverage-config
 
       - name: build
-        run: cmake --build build --parallel 4 --preset clang-coverage-build
+        run: cmake --build --parallel 4 --preset=clang-coverage-build
 
       - name: test
-        run: ctest --preset clang-coverage-test
+        run: ctest --preset=clang-coverage-test
 
-      - name: collect code coverage
-        run: bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
+      - name: merge coverage data
+        run: llvm-profdata merge -sparse build/clang-coverage/da4cpp.profraw -o build/clang-coverage/da4cpp.profdata
+
+      - name: generate coverage report
+        run: llvm-cov export -format=lcov build/clang-coverage/da4cpp -instr-profile=build/clang-coverage/da4cpp.profdata > build/clang-coverage/coverage.info
+
+      - name: upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          files: build/clang-coverage/coverage.info
+          fail_ci_if_error: true

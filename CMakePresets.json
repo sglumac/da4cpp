@@ -38,6 +38,7 @@
         "COMPILER_COVERAGE_FLAGS": "-fprofile-instr-generate -fcoverage-mapping",
         "SANITIZER_FLAGS": "-fsanitize=address,undefined"
       },
+      "binaryDir": "${sourceDir}/build/clang-coverage",
       "cacheVariables": {
         "CMAKE_CXX_FLAGS": "$env{PROJECT_WARNINGS} $env{COMPILER_COVERAGE_FLAGS} $env{SANITIZER_FLAGS}"
                             
@@ -58,7 +59,7 @@
     {
       "name": "clang-coverage-test",
       "environment": {
-        "LLVM_PROFILE_FILE": "${sourceDir}/build/da4cpp.profraw"
+        "LLVM_PROFILE_FILE": "${sourceDir}/build/clang-coverage/da4cpp.profraw"
       },
       "configurePreset": "clang-coverage-config"
     }
