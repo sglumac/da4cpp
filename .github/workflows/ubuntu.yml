@@ -4,11 +4,14 @@ on:
   push:
     branches:
       - master
-      - main
   pull_request:
     branches:
       - master
-      - main
+  workflow_dispatch:
+    inputs:
+      branch:
+        required: false
+        default: master
 
 env:
   CTEST_OUTPUT_ON_FAILURE: 1
