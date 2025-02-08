@@ -41,7 +41,7 @@ include(Catch)
 
 enable_testing()
 
-add_subdirectory(da4cpp)
+add_subdirectory(src)
 add_subdirectory(documentation)
 
 

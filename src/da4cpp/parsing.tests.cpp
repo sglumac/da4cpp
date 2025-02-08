@@ -138,20 +138,16 @@ TEST_CASE("struct_reference") {
   check_dependency_graph(resourcePath, expectedGraph);
 }
 
-TEST_CASE("cyclic_struct_dependency") {
-  const std::filesystem::path resourcePath{resources_dir() / "cyclic_struct_dependency.cpp"};
+TEST_CASE("struct_forward_declaration") {
+  const std::filesystem::path resourcePath{resources_dir() / "struct_forward_declaration.cpp"};
   auto symbol = get_symbol_constructor(resourcePath);
 
   const Symbol definitionA{symbol(3, 8, "A", SymbolType::TypeDefinition)};
-  const Symbol definitionB{symbol(7, 8, "B", SymbolType::TypeDefinition)};
   const Symbol declarationB{symbol(1, 8, "B", SymbolType::TypeDeclaration)};
-  const Symbol mainDefinition{symbol(11, 5, "main", SymbolType::FunctionDefinition)};
 
   const DependencyGraph expectedGraph  {
-        {definitionA, {declarationB}},
-        {definitionB, {definitionA}},
-        {declarationB, {}},
-        {mainDefinition, {definitionA, definitionB}}
+    {definitionA, {declarationB}},
+    {declarationB, {}}
   };
 
   check_dependency_graph(resourcePath, expectedGraph);

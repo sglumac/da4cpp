@@ -1,5 +1,0 @@
-/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
-(.text+0x1b): undefined reference to `main'
-/usr/bin/ld: /tmp/ccNd5U8E.o: in function `function(Struct*)':
-method_declaration.cpp:(.text+0x18): undefined reference to `Struct::method()'
-collect2: error: ld returned 1 exit status
