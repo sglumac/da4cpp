@@ -59,7 +59,7 @@
     {
       "name": "clang-coverage-test",
       "environment": {
-        "LLVM_PROFILE_FILE": "${sourceDir}/build/clang-coverage/da4cpp.profraw"
+        "LLVM_PROFILE_FILE": "${sourceDir}/build/clang-coverage/da4cpp.ctest.profraw"
       },
       "configurePreset": "clang-coverage-config"
     }

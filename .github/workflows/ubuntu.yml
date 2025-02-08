@@ -49,10 +49,10 @@ jobs:
         run: ctest --preset=clang-coverage-test
 
       - name: merge coverage data
-        run: llvm-profdata merge -sparse build/clang-coverage/da4cpp.profraw -o build/clang-coverage/da4cpp.profdata
+        run: llvm-profdata merge -sparse build/clang-coverage/da4cpp.ctest.profraw -o build/clang-coverage/da4cpp.profdata
 
       - name: generate coverage report
-        run: llvm-cov export -format=lcov build/clang-coverage/da4cpp -instr-profile=build/clang-coverage/da4cpp.profdata > build/clang-coverage/coverage.info
+        run: llvm-cov export -format=lcov build/clang-coverage/src/da4c=build/clang-coverage/da4cpp.profdata > build/clang-coverage/coverage.info
 
       - name: upload coverage
         uses: codecov/codecov-action@v3
