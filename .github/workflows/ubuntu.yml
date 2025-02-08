@@ -33,6 +33,9 @@ jobs:
       - name: libclang
         run: sudo apt-get install -y libclang-dev
 
+      - name: llvm
+        run: sudo apt-get install -y llvm
+
       - name: catch2
         run: sudo apt-get install -y catch2
 
