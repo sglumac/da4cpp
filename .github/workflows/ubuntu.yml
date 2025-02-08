@@ -30,6 +30,9 @@ jobs:
       - name: update
         run: sudo apt-get update
 
+      - name: libclang
+        run: sudo apt-get install -y libclang-dev
+
       - name: catch2
         run: sudo apt-get install -y catch2
 
