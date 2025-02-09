@@ -3,9 +3,10 @@
   "configurePresets": [
     {
       "name": "clang-config",
+      "description": "Warnings are copied from https://github.com/cpp-best-practices/cmake_template.",
       "hidden": true,
       "environment": {
-        "PROJECT_WARNINGS": "-Wall -Wextra -Werror"
+        "PROJECT_WARNINGS": "-Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -Werror"
       },
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
@@ -21,25 +22,32 @@
       "name": "clang-release-config",
       "inherits": "clang-config",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release"
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_C_FLAGS": "$env{PROJECT_WARNINGS}",
+        "CMAKE_CXX_FLAGS": "$env{PROJECT_WARNINGS}"
       }
     },
     {
       "name": "clang-debug-config",
       "inherits": "clang-config",
+      "environment": {
+        "SANITIZER_FLAGS": "-fsanitize=address,undefined"
+      },
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "DEBUG"
+        "CMAKE_BUILD_TYPE": "DEBUG",
+        "CMAKE_C_FLAGS": "$env{PROJECT_WARNINGS} $env{SANITIZER_FLAGS}",
+        "CMAKE_CXX_FLAGS": "$env{PROJECT_WARNINGS} $env{SANITIZER_FLAGS}"
       }
     },
     {
       "name": "clang-coverage-config",
       "inherits": "clang-debug-config",
       "environment": {
-        "COMPILER_COVERAGE_FLAGS": "-fprofile-instr-generate -fcoverage-mapping",
-        "SANITIZER_FLAGS": "-fsanitize=address,undefined"
+        "COMPILER_COVERAGE_FLAGS": "-fprofile-instr-generate -fcoverage-mapping"
       },
       "binaryDir": "${sourceDir}/build/clang-coverage",
       "cacheVariables": {
+        "CMAKE_C_FLAGS": "$env{PROJECT_WARNINGS} $env{COMPILER_COVERAGE_FLAGS} $env{SANITIZER_FLAGS}",
         "CMAKE_CXX_FLAGS": "$env{PROJECT_WARNINGS} $env{COMPILER_COVERAGE_FLAGS} $env{SANITIZER_FLAGS}"
                             
       }

@@ -11,7 +11,6 @@ set(CMAKE_C_COMPILER clang)
 set(CMAKE_CXX_COMPILER clang++)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0 -Wall -Werror")
 set(CMAKE_CXX_CLANG_TIDY "clang-tidy")
 
 if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
@@ -43,7 +42,6 @@ enable_testing()
 
 add_subdirectory(src)
 add_subdirectory(documentation)
-
 
 # ---- Create an installable target ----
 # this allows users to install and find the library via `find_package()`.
