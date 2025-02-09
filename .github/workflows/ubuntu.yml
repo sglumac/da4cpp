@@ -33,6 +33,12 @@ jobs:
       - name: update
         run: sudo apt-get update
 
+      - name: cmake-format
+        run: sudo apt-get install cmake-format
+
+      - name: cmake-lint
+        run: find src -name "*.cmake" -o -name "CMakeLists.txt" | xargs cmake-lint
+
       - name: libclang
         run: sudo apt-get install -y libclang-dev
 

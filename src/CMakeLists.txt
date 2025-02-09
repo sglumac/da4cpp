@@ -6,4 +6,3 @@ target_include_directories(da4cpp PUBLIC ${CMAKE_SOURCE_DIR}/src)
 
 add_executable(da4cpp_app main.cpp)
 target_link_libraries(da4cpp_app da4cpp)
-
