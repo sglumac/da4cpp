@@ -33,19 +33,19 @@ jobs:
       - name: update
         run: sudo apt-get update
 
-      - name: cmake-format
+      - name: install cmake-format
         run: sudo apt-get install cmake-format
 
       - name: cmake-lint
-        run: find src -name "*.cmake" -o -name "CMakeLists.txt" | xargs cmake-lint
+        run: (echo "CMakeLists.txt"; find src -name "*.cmake" -o -name "CMakeLists.txt") | xargs cmake-lint
 
-      - name: libclang
+      - name: install libclang
         run: sudo apt-get install -y libclang-dev
 
-      - name: llvm
+      - name: install llvm
         run: sudo apt-get install -y llvm
 
-      - name: catch2
+      - name: install catch2
         run: sudo apt-get install -y catch2
 
       - name: configure
