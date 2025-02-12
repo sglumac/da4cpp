@@ -5,7 +5,7 @@
 #include <string>
 
 #ifndef da4cppGRAPH_HPP
-#  define da4cppGRAPH_HPP
+# define da4cppGRAPH_HPP
 
 namespace da4cpp::graph {
 
