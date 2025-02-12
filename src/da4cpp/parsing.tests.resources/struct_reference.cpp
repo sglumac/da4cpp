@@ -1,16 +1,12 @@
 /**
  * @brief Represents a structure with a single integer member.
  */
-struct Structure {
-  int member;
-};
+struct Structure {};
 
 /**
- * @brief The main function that executes the program.
+ * @brief Creates an instance of Structure and returns 0.
  *
- * This function creates an instance of Structure and returns 0.
- *
- * @return int Returns 0 upon successful execution.
+ * @return 0 upon successful execution.
  */
 int main() {
   Structure object{};  ///< A reference of Structure.
