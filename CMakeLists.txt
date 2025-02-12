@@ -27,12 +27,6 @@ CPMAddPackage(
   GIT_TAG v1.8.0
 )
 
-CPMAddPackage(
-  NAME m.css
-  GITHUB_REPOSITORY mosra/m.css
-  GIT_TAG a0d292ec311b97fefd21e93cdefb60f88d19ede6
-)
-
 find_package(Catch2 3 REQUIRED)
 
 include(CTest)

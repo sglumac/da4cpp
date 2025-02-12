@@ -127,8 +127,8 @@ TEST_CASE("struct_reference") {
   const std::filesystem::path resourcePath{resources_dir() / "struct_reference.cpp"};
   auto symbol = get_symbol_constructor(resourcePath);
 
-  const Symbol structDefinition{symbol(1, 8, "Structure", SymbolType::TypeDefinition)};
-  const Symbol mainDefinition{symbol(5, 5, "main", SymbolType::FunctionDefinition)};
+  const Symbol structDefinition{symbol(4, 8, "Structure", SymbolType::TypeDefinition)};
+  const Symbol mainDefinition{symbol(15, 5, "main", SymbolType::FunctionDefinition)};
 
   const DependencyGraph expectedGraph  {
         {structDefinition, {}},
@@ -142,8 +142,8 @@ TEST_CASE("struct_forward_declaration") {
   const std::filesystem::path resourcePath{resources_dir() / "struct_forward_declaration.cpp"};
   auto symbol = get_symbol_constructor(resourcePath);
 
-  const Symbol definitionA{symbol(3, 8, "A", SymbolType::TypeDefinition)};
-  const Symbol declarationB{symbol(1, 8, "B", SymbolType::TypeDeclaration)};
+  const Symbol definitionA{symbol(7, 8, "A", SymbolType::TypeDefinition)};
+  const Symbol declarationB{symbol(2, 8, "B", SymbolType::TypeDeclaration)};
 
   const DependencyGraph expectedGraph  {
     {definitionA, {declarationB}},

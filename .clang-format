@@ -5,9 +5,10 @@
   AllowAllParametersOfDeclarationOnNextLine: 'false'
   AlwaysBreakTemplateDeclarations: 'No'
   BreakBeforeBraces: Attach
-  ColumnLimit: '100'
+  ColumnLimit: '120'
   ConstructorInitializerAllOnOneLineOrOnePerLine: 'true'
   IncludeBlocks: Regroup
+  AlignConsecutiveMacros: 'true'
   IndentPPDirectives: AfterHash
   IndentWidth: '2'
   NamespaceIndentation: All
