@@ -41,7 +41,6 @@ include(Catch)
 enable_testing()
 
 add_subdirectory(src)
-add_subdirectory(documentation)
 
 # ---- Create an installable target ----
 # this allows users to install and find the library via `find_package()`.
