@@ -2,7 +2,7 @@
  * @brief Represents a structure with a single integer member.
  */
 struct Structure {
-    int member;
+  int member;
 };
 
 /**
@@ -13,7 +13,6 @@ struct Structure {
  * @return int Returns 0 upon successful execution.
  */
 int main() {
-    Structure object{}; ///< A reference of Structure.
-    return 0;
+  Structure object{};  ///< A reference of Structure.
+  return 0;
 }
-
