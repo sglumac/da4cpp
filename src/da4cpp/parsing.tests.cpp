@@ -156,12 +156,10 @@ TEST_CASE("function_call") {
   const std::filesystem::path resourcePath{resources_dir() / "function_call.cpp"};
   auto symbol = get_symbol_constructor(resourcePath);
 
-  const Symbol functionDeclaration{symbol(1, 6, "function", SymbolType::FunctionDeclaration)};
-  const Symbol functionDefinition{symbol(8, 6, "function", SymbolType::FunctionDefinition)};
+  const Symbol functionDefinition{symbol(1, 6, "function", SymbolType::FunctionDefinition)};
   const Symbol mainDefinition{symbol(3, 5, "main", SymbolType::FunctionDefinition)};
 
-  const DependencyGraph expectedGraph{
-      {functionDeclaration, {functionDefinition}}, {functionDefinition, {}}, {mainDefinition, {functionDeclaration}}};
+  const DependencyGraph expectedGraph{{functionDefinition, {}}, {mainDefinition, {functionDefinition}}};
 
   check_dependency_graph(resourcePath, expectedGraph);
 }
@@ -174,7 +172,7 @@ TEST_CASE("struct_reference") {
   auto symbol = get_symbol_constructor(resourcePath);
 
   const Symbol structDefinition{symbol(4, 8, "Structure", SymbolType::TypeDefinition)};
-  const Symbol mainDefinition{symbol(15, 5, "main", SymbolType::FunctionDefinition)};
+  const Symbol mainDefinition{symbol(11, 5, "main", SymbolType::FunctionDefinition)};
 
   const DependencyGraph expectedGraph{{structDefinition, {}}, {mainDefinition, {structDefinition}}};
 

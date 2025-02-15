@@ -233,8 +233,7 @@ namespace {
    */
   SymbolAndDependencies process_function_declaration(const CXCursor &cursor) {
     const Symbol declaration{function_declaration_from_cursor(cursor)};
-    const Symbol definition{function_definition_from_cursor(clang_getCursorDefinition(cursor))};
-    const Dependencies dependencies{definition};
+    const Dependencies dependencies{};
     return {declaration, dependencies};
   }
 
@@ -252,6 +251,15 @@ namespace {
   }
 
   /**
+   * @brief Checks if a cursor refers to a function definition.
+   * @param cursor The Clang cursor.
+   * @return True if the cursor is a function definition, false otherwise.
+   */
+  bool is_function_definition(const CXCursor &cursor) {
+    return clang_getCursorKind(cursor) == CXCursor_FunctionDecl && static_cast<bool>(clang_isCursorDefinition(cursor));
+  }
+
+  /**
    * @brief A visitor function to collect dependencies (function calls, struct references) when visiting a function
    * definition.
    * @param cursor The current cursor.
@@ -263,23 +271,15 @@ namespace {
   CXChildVisitResult visit_function_definition(CXCursor cursor, [[maybe_unused]] CXCursor parent,
                                                CXClientData clientData) {
     auto &dependencies = *static_cast<Dependencies *>(clientData);
+    const CXCursor referenced = clang_getCursorReferenced(cursor);
     if (is_function_reference(cursor)) {
-      const Symbol referenced{function_declaration_from_cursor(clang_getCursorReferenced(cursor))};
-      dependencies.emplace(referenced);
+      if (is_function_definition(referenced)) {
+        dependencies.emplace(function_definition_from_cursor(referenced));
+      }
     } else if (is_struct_reference(cursor)) {
-      const Symbol referenced{type_definition_from_cursor(clang_getCursorReferenced(cursor))};
-      dependencies.emplace(referenced);
+      dependencies.emplace(type_definition_from_cursor(referenced));
     }
     return CXChildVisit_Recurse;
-  }
-
-  /**
-   * @brief Checks if a cursor refers to a function definition.
-   * @param cursor The Clang cursor.
-   * @return True if the cursor is a function definition, false otherwise.
-   */
-  bool is_function_definition(const CXCursor &cursor) {
-    return clang_getCursorKind(cursor) == CXCursor_FunctionDecl && static_cast<bool>(clang_isCursorDefinition(cursor));
   }
 
   /**
