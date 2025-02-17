@@ -2,7 +2,16 @@
   "version": 3,
   "configurePresets": [
     {
-      "name": "clang-config",
+      "name": "project",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_CXX_CLANG_TIDY": "clang-tidy"
+      }
+    },
+    {
+      "name": "clang",
+      "inherits": "project",
       "description": "Warnings are copied from https://github.com/cpp-best-practices/cmake_template.",
       "hidden": true,
       "environment": {
@@ -10,16 +19,50 @@
       },
       "cacheVariables": {
         "CMAKE_C_COMPILER": "clang",
-        "CMAKE_CXX_COMPILER": "clang++",
-        "CMAKE_CXX_STANDARD": "20",
-        "CMAKE_CXX_STANDARD_REQUIRED": "ON",
-        "CMAKE_CXX_EXTENSIONS": "OFF",
-        "CMAKE_CXX_CLANG_TIDY": "clang-tidy"
+        "CMAKE_CXX_COMPILER": "clang++"
       }
     },
     {
-      "name": "clang-release-config",
-      "inherits": "clang-config",
+      "name": "clang-release",
+      "inherits": "clang",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "clang-debug",
+      "inherits": "clang",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "DEBUG"
+      }
+    },
+    {
+      "name": "clang-coverage",
+      "inherits": "clang-debug",
+      "environment": {
+        "COVERAGE_FLAGS": "-fprofile-instr-generate -fcoverage-mapping"
+      },
+      "cacheVariables": {
+        "CMAKE_C_FLAGS": "$env{PROJECT_WARNINGS} $env{COVERAGE_FLAGS}",
+        "CMAKE_CXX_FLAGS": "$env{PROJECT_WARNINGS} $env{COVERAGE_FLAGS}"
+      }
+    },
+    {
+      "name": "gcc",
+      "inherits": "project",
+      "description": "Warnings are copied from https://github.com/cpp-best-practices/cmake_template.",
+      "hidden": true,
+      "environment": {
+        "PROJECT_WARNINGS": "-Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -Werror -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wuseless-cast -Wsuggest-override"
+      },
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++"
+      }
+    },
+    {
+      "name": "gcc-release",
+      "inherits": "gcc",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
         "CMAKE_C_FLAGS": "$env{PROJECT_WARNINGS}",
@@ -27,48 +70,58 @@
       }
     },
     {
-      "name": "clang-debug-config",
-      "inherits": "clang-config",
-      "environment": {
-        "SANITIZER_FLAGS": "-fsanitize=address,undefined"
-      },
+      "name": "gcc-debug",
+      "inherits": "gcc",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "DEBUG",
-        "CMAKE_C_FLAGS": "$env{PROJECT_WARNINGS} $env{SANITIZER_FLAGS}",
-        "CMAKE_CXX_FLAGS": "$env{PROJECT_WARNINGS} $env{SANITIZER_FLAGS}"
+        "CMAKE_C_FLAGS": "$env{PROJECT_WARNINGS}",
+        "CMAKE_CXX_FLAGS": "$env{PROJECT_WARNINGS}"
       }
     },
     {
-      "name": "clang-coverage-config",
-      "inherits": "clang-debug-config",
+      "name": "gcc-coverage",
+      "inherits": "gcc-debug",
       "environment": {
-        "COMPILER_COVERAGE_FLAGS": "-fprofile-instr-generate -fcoverage-mapping"
+        "COVERAGE_FLAGS": "-fprofile-arcs -ftest-coverage"
       },
-      "binaryDir": "${sourceDir}/build/clang-coverage",
       "cacheVariables": {
-        "CMAKE_C_FLAGS": "$env{PROJECT_WARNINGS} $env{COMPILER_COVERAGE_FLAGS} $env{SANITIZER_FLAGS}",
-        "CMAKE_CXX_FLAGS": "$env{PROJECT_WARNINGS} $env{COMPILER_COVERAGE_FLAGS} $env{SANITIZER_FLAGS}"
-                            
+        "CMAKE_C_FLAGS": "$env{PROJECT_WARNINGS} $env{COVERAGE_FLAGS}",
+        "CMAKE_CXX_FLAGS": "$env{PROJECT_WARNINGS} $env{COVERAGE_FLAGS}"
       }
     }
   ],
   "buildPresets": [
     {
-      "name": "clang-release-build",
-      "configurePreset": "clang-release-config"
+      "name": "clang-release",
+      "configurePreset": "clang-release"
     },
     {
-      "name": "clang-coverage-build",
-      "configurePreset": "clang-coverage-config"
+      "name": "clang-coverage",
+      "configurePreset": "clang-coverage"
+    },
+    {
+      "name": "gcc-release",
+      "configurePreset": "gcc-release"
+    },
+    {
+      "name": "gcc-coverage",
+      "configurePreset": "gcc-coverage"
     }
   ],
   "testPresets": [
     {
-      "name": "clang-coverage-test",
+      "name": "clang-coverage",
       "environment": {
         "LLVM_PROFILE_FILE": "${sourceDir}/build/clang-coverage/da4cpp.ctest.profraw"
       },
-      "configurePreset": "clang-coverage-config"
+      "configurePreset": "clang-coverage"
+    },
+    {
+      "name": "gcc-coverage",
+      "environment": {
+        "LLVM_PROFILE_FILE": "${sourceDir}/build/gcc-coverage/da4cpp.ctest.profraw"
+      },
+      "configurePreset": "gcc-coverage"
     }
   ]
 }

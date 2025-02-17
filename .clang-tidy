@@ -20,6 +20,7 @@ ImplementationFileExtensions:
 HeaderFilterRegex: ''
 FormatStyle:     file
 SystemHeaders:   false
+ExtraArgs: ['-Wno-unknown-warning-option']
 
 CheckOptions:
   - key: misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic
