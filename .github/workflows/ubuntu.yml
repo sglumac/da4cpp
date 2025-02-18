@@ -54,6 +54,9 @@ jobs:
       - name: install catch2
         run: sudo apt-get install -y catch2
 
+      - name: install gcovr
+        run: sudo apt-get install -y gcovr
+
       - name: configure
         run: cmake --preset=clang-coverage
 
