@@ -6,7 +6,8 @@
       "hidden": true,
       "binaryDir": "${sourceDir}/build/${presetName}",
       "cacheVariables": {
-        "CMAKE_CXX_CLANG_TIDY": "clang-tidy"
+        "CMAKE_CXX_CLANG_TIDY": "clang-tidy",
+        "WARNINGS_AS_ERRORS": "ON"
       }
     },
     {
@@ -35,7 +36,10 @@
     },
     {
       "name": "clang-coverage",
-      "inherits": "clang-debug"
+      "inherits": "clang-debug",
+      "cacheVariables": {
+        "CODE_COVERAGE": "ON"
+      }
     },
     {
       "name": "gcc",
@@ -58,20 +62,25 @@
       "name": "gcc-debug",
       "inherits": "gcc",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "DEBUG",
-        "CMAKE_C_FLAGS": "$env{PROJECT_WARNINGS}",
-        "CMAKE_CXX_FLAGS": "$env{PROJECT_WARNINGS}"
+        "CMAKE_BUILD_TYPE": "DEBUG"
       }
     },
     {
       "name": "gcc-coverage",
-      "inherits": "gcc-debug"
+      "inherits": "gcc-debug",
+      "cacheVariables": {
+        "CODE_COVERAGE": "ON"
+      }
     }
   ],
   "buildPresets": [
     {
       "name": "clang-release",
       "configurePreset": "clang-release"
+    },
+    {
+      "name": "clang-debug",
+      "configurePreset": "clang-debug"
     },
     {
       "name": "clang-coverage",
@@ -82,6 +91,10 @@
       "configurePreset": "gcc-release"
     },
     {
+      "name": "gcc-debug",
+      "configurePreset": "gcc-debug"
+    },
+    {
       "name": "gcc-coverage",
       "configurePreset": "gcc-coverage"
     }
@@ -89,9 +102,6 @@
   "testPresets": [
     {
       "name": "clang-coverage",
-      "environment": {
-        "LLVM_PROFILE_FILE": "${sourceDir}/build/clang-coverage/da4cpp.ctest.profraw"
-      },
       "configurePreset": "clang-coverage"
     },
     {

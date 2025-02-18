@@ -17,7 +17,7 @@ if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
   )
 endif()
 
-include(cmake/DefaultOptions.cmake)
+include(cmake/ProjectOptions.cmake)
 include(cmake/CPM.cmake)
 
 CPMAddPackage(
@@ -34,7 +34,10 @@ include(Catch)
 enable_testing()
 
 add_library(default_project_cxx_flags INTERFACE)
-target_default_cxx_flags(default_project_cxx_flags INTERFACE ON ON)
+target_default_cxx_flags(default_project_cxx_flags INTERFACE
+  WARNINGS_AS_ERRORS ${WARNINGS_AS_ERRORS}
+  CODE_COVERAGE ${CODE_COVERAGE}
+)
 
 add_subdirectory(src)
 
