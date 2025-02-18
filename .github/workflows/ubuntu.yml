@@ -55,13 +55,13 @@ jobs:
         run: sudo apt-get install -y catch2
 
       - name: configure
-        run: cmake --preset=clang-coverage-config
+        run: cmake --preset=clang-coverage
 
       - name: build
-        run: cmake --build --parallel 4 --preset=clang-coverage-build
+        run: cmake --build --parallel 4 --preset=clang-coverage
 
       - name: test
-        run: ctest --preset=clang-coverage-test
+        run: ctest --preset=clang-coverage
 
       - name: generate coverage report
         run: GCOV="llvm-cov gcov" gcovr --xml --output build/clang-coverage/coverage.xml
