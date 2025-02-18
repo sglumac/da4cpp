@@ -63,14 +63,11 @@ jobs:
       - name: test
         run: ctest --preset=clang-coverage-test
 
-      - name: merge coverage data
-        run: llvm-profdata merge -sparse build/clang-coverage/da4cpp.ctest.profraw -o build/clang-coverage/da4cpp.profdata
-
       - name: generate coverage report
-        run: llvm-cov export -format=lcov build/clang-coverage/src/da4cpp/parsing_tests -instr-profile=build/clang-coverage/da4cpp.profdata > build/clang-coverage/coverage.info
+        run: GCOV="llvm-cov gcov" gcovr --xml --output build/clang-coverage/coverage.xml
 
       - name: upload coverage
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
-          files: build/clang-coverage/coverage.info
+          files: build/clang-coverage/coverage.xml
           fail_ci_if_error: true

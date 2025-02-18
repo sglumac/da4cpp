@@ -17,7 +17,11 @@ if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
   )
 endif()
 
+
+include(cmake/DefaultOptions.cmake)
 include(cmake/CPM.cmake)
+
+
 
 CPMAddPackage(
   NAME PackageProject.cmake
@@ -31,6 +35,9 @@ include(CTest)
 include(Catch)
 
 enable_testing()
+
+add_library(default_project_cxx_flags INTERFACE)
+target_default_cxx_flags(default_project_cxx_flags INTERFACE ON ON)
 
 add_subdirectory(src)
 

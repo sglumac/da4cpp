@@ -12,11 +12,8 @@
     {
       "name": "clang",
       "inherits": "project",
-      "description": "Warnings are copied from https://github.com/cpp-best-practices/cmake_template.",
+      "description": "",
       "hidden": true,
-      "environment": {
-        "PROJECT_WARNINGS": "-Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -Werror"
-      },
       "cacheVariables": {
         "CMAKE_C_COMPILER": "clang",
         "CMAKE_CXX_COMPILER": "clang++"
@@ -39,12 +36,8 @@
     {
       "name": "clang-coverage",
       "inherits": "clang-debug",
-      "environment": {
-        "COVERAGE_FLAGS": "-fprofile-instr-generate -fcoverage-mapping"
-      },
       "cacheVariables": {
-        "CMAKE_C_FLAGS": "$env{PROJECT_WARNINGS} $env{COVERAGE_FLAGS}",
-        "CMAKE_CXX_FLAGS": "$env{PROJECT_WARNINGS} $env{COVERAGE_FLAGS}"
+        "COVERAGE_FLAGS": "-fprofile-instr-generate -fcoverage-mapping"
       }
     },
     {
@@ -52,9 +45,6 @@
       "inherits": "project",
       "description": "Warnings are copied from https://github.com/cpp-best-practices/cmake_template.",
       "hidden": true,
-      "environment": {
-        "PROJECT_WARNINGS": "-Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -Werror -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wuseless-cast -Wsuggest-override"
-      },
       "cacheVariables": {
         "CMAKE_C_COMPILER": "gcc",
         "CMAKE_CXX_COMPILER": "g++"
@@ -64,9 +54,7 @@
       "name": "gcc-release",
       "inherits": "gcc",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release",
-        "CMAKE_C_FLAGS": "$env{PROJECT_WARNINGS}",
-        "CMAKE_CXX_FLAGS": "$env{PROJECT_WARNINGS}"
+        "CMAKE_BUILD_TYPE": "Release"
       }
     },
     {
@@ -81,12 +69,8 @@
     {
       "name": "gcc-coverage",
       "inherits": "gcc-debug",
-      "environment": {
-        "COVERAGE_FLAGS": "-fprofile-arcs -ftest-coverage"
-      },
       "cacheVariables": {
-        "CMAKE_C_FLAGS": "$env{PROJECT_WARNINGS} $env{COVERAGE_FLAGS}",
-        "CMAKE_CXX_FLAGS": "$env{PROJECT_WARNINGS} $env{COVERAGE_FLAGS}"
+        "COVERAGE_FLAGS": "-fprofile-arcs -ftest-coverage"
       }
     }
   ],
@@ -118,9 +102,6 @@
     },
     {
       "name": "gcc-coverage",
-      "environment": {
-        "LLVM_PROFILE_FILE": "${sourceDir}/build/gcc-coverage/da4cpp.ctest.profraw"
-      },
       "configurePreset": "gcc-coverage"
     }
   ]
