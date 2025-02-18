@@ -17,11 +17,8 @@ if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
   )
 endif()
 
-
 include(cmake/DefaultOptions.cmake)
 include(cmake/CPM.cmake)
-
-
 
 CPMAddPackage(
   NAME PackageProject.cmake
