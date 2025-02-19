@@ -63,7 +63,7 @@ namespace {
    * @param cxStr The CXString to convert.
    * @return The converted std::string.
    */
-  std::string toString(CXString cxStr) {
+  std::string to_string(CXString cxStr) {
     std::string str = clang_getCString(cxStr);
     clang_disposeString(cxStr);
     return str;
@@ -74,7 +74,7 @@ namespace {
    * @param cursor The Clang cursor.
    * @return The spelled-out name of the symbol.
    */
-  std::string get_symbol_name(const CXCursor &cursor) { return toString(clang_getCursorSpelling(cursor)); }
+  std::string get_symbol_name(const CXCursor &cursor) { return to_string(clang_getCursorSpelling(cursor)); }
 
   /**
    * @brief Constructs a Symbol from a Clang cursor and a symbol name.
@@ -92,7 +92,7 @@ namespace {
 
     clang_getFileLocation(location, &file, &line, &column, &offset);
 
-    return {.filePath = std::filesystem::path(toString(clang_getFileName(file))),
+    return {.filePath = std::filesystem::path(to_string(clang_getFileName(file))),
             .line = line,
             .column = column,
             .name = symbolName,
