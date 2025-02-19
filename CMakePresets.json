@@ -44,7 +44,6 @@
     {
       "name": "gcc",
       "inherits": "project",
-      "description": "Warnings are copied from https://github.com/cpp-best-practices/cmake_template.",
       "hidden": true,
       "cacheVariables": {
         "CMAKE_C_COMPILER": "gcc",
