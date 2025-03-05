@@ -131,7 +131,7 @@ namespace {
     if (graphOption.has_value()) {
       const DependencyGraph& actualGraph = graphOption.value();
       INFO(compare_maps(actualGraph, expectedGraph));
-      REQUIRE(expectedGraph == actualGraph);
+      REQUIRE((expectedGraph == actualGraph));
     } else {
       FAIL("parse_translation_unit failed to parse" + resourcePath.string());
     }
