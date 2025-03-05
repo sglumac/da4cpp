@@ -45,11 +45,8 @@ jobs:
       - name: cmake-lint
         run: (echo "CMakeLists.txt"; find src -name "*.cmake" -o -name "CMakeLists.txt") | xargs cmake-lint
 
-      - name: install clang
-        run: sudo apt-get install -y clang
-
-      - name: install libclang
-        run: sudo apt-get install -y libclang-dev
+      - name: install Clang
+        run: sudo apt-get install -y clang llvm llvm-dev libclang-dev
 
       - name: install llvm
         run: sudo apt-get install -y llvm
