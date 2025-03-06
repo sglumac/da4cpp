@@ -18,6 +18,7 @@ if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
 endif()
 
 include(cmake/ProjectOptions.cmake)
+include(cmake/Dependencies.cmake)
 include(cmake/CPM.cmake)
 
 CPMAddPackage(
