@@ -1,12 +1,12 @@
-include(cmake/CPM.cmake)
-
 find_package(Catch2 3 REQUIRED)
+find_package(LLVM REQUIRED CONFIG)
+find_package(Clang REQUIRED CONFIG)
 
 include(CTest)
 include(Catch)
 
-find_package(LLVM REQUIRED CONFIG)
-find_package(Clang REQUIRED CONFIG)
+include(cmake/CPM.cmake)
+CPMUsePackageLock(cmake/cpm-package-lock.cmake)
 
 CPMAddPackage(
   NAME PackageProject.cmake
