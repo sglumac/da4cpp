@@ -324,6 +324,7 @@ namespace {
   }
 }  // namespace
 
+/// \brief Contains parsing functions for da4cpp.
 namespace da4cpp::parsing {
 
   /**

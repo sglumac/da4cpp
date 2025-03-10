@@ -1,6 +1,7 @@
 find_package(Catch2 3 REQUIRED)
 find_package(LLVM REQUIRED CONFIG)
 find_package(Clang REQUIRED CONFIG)
+find_package(Doxygen REQUIRED)
 
 include(CTest)
 include(Catch)
