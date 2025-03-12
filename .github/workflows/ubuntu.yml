@@ -49,6 +49,9 @@ jobs:
       - name: install gcovr
         run: sudo apt-get install -y gcovr
 
+      - name: install graphviz
+        run: sudo apt-get install -y graphviz
+
       - name: configure
         run: cmake --preset=clang-coverage
 

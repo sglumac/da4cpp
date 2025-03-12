@@ -19,6 +19,7 @@ endif()
 
 include(cmake/ProjectOptions.cmake)
 include(cmake/Dependencies.cmake)
+include(cmake/Documentation.cmake)
 include(cmake/CPM.cmake)
 
 CPMAddPackage(
