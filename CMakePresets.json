@@ -1,0 +1,111 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "project",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_CXX_CLANG_TIDY": "clang-tidy",
+        "WARNINGS_AS_ERRORS": "ON"
+      }
+    },
+    {
+      "name": "clang",
+      "inherits": "project",
+      "description": "",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    },
+    {
+      "name": "clang-release",
+      "inherits": "clang",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "clang-debug",
+      "inherits": "clang",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "DEBUG"
+      }
+    },
+    {
+      "name": "clang-coverage",
+      "inherits": "clang-debug",
+      "cacheVariables": {
+        "CODE_COVERAGE": "ON"
+      }
+    },
+    {
+      "name": "gcc",
+      "inherits": "project",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++"
+      }
+    },
+    {
+      "name": "gcc-release",
+      "inherits": "gcc",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "gcc-debug",
+      "inherits": "gcc",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "DEBUG"
+      }
+    },
+    {
+      "name": "gcc-coverage",
+      "inherits": "gcc-debug",
+      "cacheVariables": {
+        "CODE_COVERAGE": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "clang-release",
+      "configurePreset": "clang-release"
+    },
+    {
+      "name": "clang-debug",
+      "configurePreset": "clang-debug"
+    },
+    {
+      "name": "clang-coverage",
+      "configurePreset": "clang-coverage"
+    },
+    {
+      "name": "gcc-release",
+      "configurePreset": "gcc-release"
+    },
+    {
+      "name": "gcc-debug",
+      "configurePreset": "gcc-debug"
+    },
+    {
+      "name": "gcc-coverage",
+      "configurePreset": "gcc-coverage"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "clang-coverage",
+      "configurePreset": "clang-coverage"
+    },
+    {
+      "name": "gcc-coverage",
+      "configurePreset": "gcc-coverage"
+    }
+  ]
+}

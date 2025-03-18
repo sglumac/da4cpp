@@ -1,0 +1,478 @@
+
+Full API
+--------
+
+Namespaces
+**********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   namespace_anonymous_namespace{parsing.cpp}.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   namespace_anonymous_namespace{parsing.tests.cpp}.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   namespace_da4cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   namespace_da4cpp__graph.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   namespace_da4cpp__parsing.rst
+
+Classes and Structs
+*******************
+
+
+.. toctree::
+   :maxdepth: 5
+
+   structA.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   structda4cpp_1_1graph_1_1Dependency.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   structda4cpp_1_1graph_1_1Symbol.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   structStructure.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   structSymbolMatch.rst
+
+Enums
+*****
+
+
+.. toctree::
+   :maxdepth: 5
+
+   enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.rst
+
+Functions
+*********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1af79e03782424be4e1a517055707cd279.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a25f53986484be2ac058c92250f530903.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1ae92d161dbb289c3c10e758429f4b7474.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a818da856d671a2d0ca81b2f95f3dfb19.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1ac430d3ad690250bf8698fab850116d7d.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a76127554ea719311c60dbcfb5b0658fe.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1adf80a2f5cae79ba4804a25cda160a0b2.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1abab7bd0f0109068ff38de441e1744d81.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a8bf92ac02f27af018c01f386dff0da61.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a0f6c6e5cc86c194419253e8785fd796c.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a0aadd31ac60a10d17fa33a165798ba0a.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1ace99474350c6495751d9fdfd956c103c.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a27ae436fd9b015a24e644bbde3fe1d7e.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a5e5476668f221690a8cbd6cf344ea16d.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a2d8978993a237d43d6cf4e89bbd6954e.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a2e5f4d2119d474a411999a56e841362f.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1ae5ca2ed8d8b036fa670fea524f681b78.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1aef45c84c2b40d344682f0914cc3ed8da.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a97f9c426f6f9d16ec04104bbeac1db3c.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1aeb5e295d5faa38a298f59077b4879cf5.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a8535e931bdbe5a7de0c19059f659d7e5.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a3c5b333cb92f7e9d930f98bfa2554002.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1aeb4be9eaa7bf4dee7436b54c5ab0b72a.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1af6f563ab94ffedc93c07c4dd3bff8a7e.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a82a446d19be51f22543b3d3e888c46b0.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1ad8d7cd6e821a8d28002a1f4a2ca9c2bb.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a7c9838bee5c522f07bb5fa14677885c4.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a3c5b333cb92f7e9d930f98bfa2554002.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1aeb4be9eaa7bf4dee7436b54c5ab0b72a.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceda4cpp_1_1parsing_1a6fe77e69e4cc733f83016edfd139ca81.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1af79e03782424be4e1a517055707cd279.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a25f53986484be2ac058c92250f530903.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function__call_8cpp_1a51a683fa4fcec142ab1574e00a7b6860.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1ae92d161dbb289c3c10e758429f4b7474.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a818da856d671a2d0ca81b2f95f3dfb19.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1af6f563ab94ffedc93c07c4dd3bff8a7e.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1ac430d3ad690250bf8698fab850116d7d.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a76127554ea719311c60dbcfb5b0658fe.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1adf80a2f5cae79ba4804a25cda160a0b2.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1abab7bd0f0109068ff38de441e1744d81.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a8bf92ac02f27af018c01f386dff0da61.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a0f6c6e5cc86c194419253e8785fd796c.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a0aadd31ac60a10d17fa33a165798ba0a.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function__call_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_struct__reference_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_main_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a82a446d19be51f22543b3d3e888c46b0.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1ad8d7cd6e821a8d28002a1f4a2ca9c2bb.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceda4cpp_1_1parsing_1a6fe77e69e4cc733f83016edfd139ca81.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceda4cpp_1_1parsing_1a6fe77e69e4cc733f83016edfd139ca81.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1ace99474350c6495751d9fdfd956c103c.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a27ae436fd9b015a24e644bbde3fe1d7e.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a5e5476668f221690a8cbd6cf344ea16d.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a2d8978993a237d43d6cf4e89bbd6954e.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a7c9838bee5c522f07bb5fa14677885c4.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_parsing_8tests_8cpp_1a857b53fea9226a375d19903304153d44.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_parsing_8tests_8cpp_1addc7e33df63574f7dd04e63135cd37bd.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_parsing_8tests_8cpp_1aa8e4c0f5c4331752b982f5a51d00c6d8.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a2e5f4d2119d474a411999a56e841362f.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1ae5ca2ed8d8b036fa670fea524f681b78.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1aef45c84c2b40d344682f0914cc3ed8da.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a97f9c426f6f9d16ec04104bbeac1db3c.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1aeb5e295d5faa38a298f59077b4879cf5.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceanonymous__namespace_02parsing_8cpp_03_1a8535e931bdbe5a7de0c19059f659d7e5.rst
+
+Typedefs
+********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1aed5ae99d86440861c2cc2e3e5fd9203e.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1a7b75726b88e5d9d4902a0b12b87e5d2e.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1abb4249e465d3a45d17b921914d466c08.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1a1a4b4d96d5ebb0f33aec9115c9d9b198.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1adf1f3f35bfc0d1bfccb30d8ac98b7ffd.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1aed5ae99d86440861c2cc2e3e5fd9203e.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1a7b75726b88e5d9d4902a0b12b87e5d2e.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1abb4249e465d3a45d17b921914d466c08.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceda4cpp_1_1graph_1a3c3452ffee7c04ccffb0f35d8c713c68.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceda4cpp_1_1graph_1a2a74a614f4148607b26a74f60bc16a1a.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceda4cpp_1_1graph_1a3c3452ffee7c04ccffb0f35d8c713c68.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceda4cpp_1_1graph_1a2a74a614f4148607b26a74f60bc16a1a.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1a1a4b4d96d5ebb0f33aec9115c9d9b198.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_parsing_8cpp_1ac4f2e381856feec24d9d9df051e5be20.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1adf1f3f35bfc0d1bfccb30d8ac98b7ffd.rst

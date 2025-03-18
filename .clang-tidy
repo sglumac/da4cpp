@@ -1,0 +1,68 @@
+---
+Checks:          '*,
+                  -llvmlibc*,
+                  -performance-avoid-endl,
+                  -modernize-use-trailing-return-type,
+                  -fuchsia-*,
+                  -altera-*'
+WarningsAsErrors: '*'
+HeaderFileExtensions:
+  - ''
+  - h
+  - hh
+  - hpp
+  - hxx
+ImplementationFileExtensions:
+  - c
+  - cc
+  - cpp
+  - cxx
+HeaderFilterRegex: ''
+FormatStyle:     file
+SystemHeaders:   false
+ExtraArgs: ['-Wno-unknown-warning-option']
+
+CheckOptions:
+  - key: misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic
+    value: 'true'
+  - key: readability-identifier-naming.ClassCase
+    value: CamelCase
+  - key: readability-identifier-naming.StructCase
+    value: CamelCase
+  - key: readability-identifier-naming.FunctionCase
+    value: lower_case
+  - key: readability-identifier-naming.VariableCase
+    value: camelBack
+  - key: readability-identifier-naming.MemberCase
+    value: camelBack
+  - key: readability-identifier-naming.PrivateMemberPrefix
+    value: _
+  - key: readability-identifier-naming.PrivateMemberCase
+    value: lower_case
+  - key: readability-identifier-naming.EnumCase
+    value: CamelCase
+  - key: readability-function-cognitive-complexity.Threshold
+    value: 15
+  - key: readability-braces-around-statements.ShortStatementLines
+    value: 1
+  - key: readability-container-size-empty.IgnoreMacros
+    value: false
+  - key: readability-magic-numbers.IgnoredIntegerValues
+    value: ''
+  - key: readability-magic-numbers.IgnoredFloatingPointValues
+    value: ''
+  - key: readability-inconsistent-declaration-parameter-name.IgnoreMainLikeFunctions
+    value: false
+  - key: readability-redundant-control-flow.IgnoreMacros
+    value: false
+  - key: readability-redundant-member-init.StrictMode
+    value: true
+  - key: readability-simplify-boolean-expr.IgnoreMacros
+    value: false
+  - key: readability-use-anyofallof.StrictMode
+    value: true
+  - key: readability-redundant-parentheses.StrictMode
+    value: true
+  - key: readability-function-cognitive-complexity.WarnOnly
+    value: false
+

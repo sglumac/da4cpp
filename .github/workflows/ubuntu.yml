@@ -4,11 +4,14 @@ on:
   push:
     branches:
       - master
-      - main
   pull_request:
     branches:
       - master
-      - main
+  workflow_dispatch:
+    inputs:
+      branch:
+        required: false
+        default: master
 
 env:
   CTEST_OUTPUT_ON_FAILURE: 1
@@ -22,21 +25,50 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/cache@v3
+      - name: clang-format
+        uses: jidicula/clang-format-action@v4.11.0
         with:
-          path: "**/cpm_modules"
-          key: ${{ github.workflow }}-cpm-modules-${{ hashFiles('**/CMakeLists.txt', '**/*.cmake') }}
+          clang-format-version: '18'
+          check-path: 'src'
+
+      - name: update
+        run: sudo apt-get update
+
+      - name: install cmake-format
+        run: sudo apt-get install cmake-format
+
+      - name: cmake-lint
+        run: (echo "CMakeLists.txt"; find src -name "*.cmake" -o -name "CMakeLists.txt") | xargs cmake-lint
+
+      - name: install Clang
+        run: sudo apt-get install -y clang-16 llvm-16-dev libclang-16-dev
+
+      - name: install catch2
+        run: sudo apt-get install -y catch2
+
+      - name: install gcovr
+        run: sudo apt-get install -y gcovr
+
+      - name: install graphviz
+        run: sudo apt-get install -y graphviz
+
+      - name: install doxygen
+        run: sudo apt-get install -y doxygen
 
       - name: configure
-        run: cmake -Stest -Bbuild -DENABLE_TEST_COVERAGE=1 -DCMAKE_BUILD_TYPE=Debug
+        run: cmake --preset=clang-coverage
 
       - name: build
-        run: cmake --build build -j4
+        run: cmake --build --parallel 4 --preset=clang-coverage
 
       - name: test
-        run: |
-          cd build
-          ctest --build-config Debug
+        run: ctest --preset=clang-coverage --output-junit test-results.xml
 
-      - name: collect code coverage
-        run: bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
+      - name: generate coverage report
+        run: GCOV="llvm-cov gcov" gcovr --xml --output build/clang-coverage/coverage.xml
+
+      - name: upload coverage
+        uses: codecov/codecov-action@v4
+        with:
+          files: build/clang-coverage/coverage.xml,build/clang-coverage/test-results.xml
+          fail_ci_if_error: true
