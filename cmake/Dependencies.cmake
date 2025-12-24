@@ -1,13 +1,17 @@
-find_package(Catch2 3 REQUIRED)
 find_package(LLVM REQUIRED CONFIG)
 find_package(Clang REQUIRED CONFIG)
 find_package(Doxygen REQUIRED)
 
-include(CTest)
-include(Catch)
-
 include(cmake/CPM.cmake)
 CPMUsePackageLock(cmake/cpm-package-lock.cmake)
+
+CPMAddPackage(
+  NAME Catch2
+  GITHUB_REPOSITORY catchorg/Catch2
+  VERSION 3.4.0
+)
+find_package(Catch2 REQUIRED)
+include(${Catch2_SOURCE_DIR}/extras/Catch.cmake)
 
 CPMAddPackage(
   NAME PackageProject.cmake

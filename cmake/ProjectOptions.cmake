@@ -21,3 +21,24 @@ function(target_default_cxx_flags target scope WARNINGS_AS_ERRORS CODE_COVERAGE)
   endif()
 endfunction()
 
+function(enable_clang_tidy target)
+    # Check if target exists
+    if(NOT TARGET ${target})
+        return()
+    endif()
+    
+    # Don't apply to imported or interface libraries
+    get_target_property(TARGET_TYPE ${target} TYPE)
+    if(TARGET_TYPE STREQUAL "INTERFACE_LIBRARY" OR 
+       TARGET_TYPE STREQUAL "UTILITY" OR
+       TARGET_TYPE STREQUAL "IMPORTED")
+        return()
+    endif()
+    
+    # Set clang-tidy for this specific target
+    set_target_properties(${target} PROPERTIES
+        CXX_CLANG_TIDY "clang-tidy;--config-file=${CMAKE_SOURCE_DIR}/.clang-tidy"
+    )
+    message(STATUS "Enabled clang-tidy for target: ${target}")
+endfunction()
+

@@ -20,26 +20,17 @@ endif()
 include(cmake/ProjectOptions.cmake)
 include(cmake/Dependencies.cmake)
 include(cmake/Documentation.cmake)
-include(cmake/CPM.cmake)
-
-CPMAddPackage(
-  NAME PackageProject.cmake
-  GITHUB_REPOSITORY TheLartians/PackageProject.cmake
-  GIT_TAG v1.8.0
-)
-
-find_package(Catch2 3 REQUIRED)
 
 include(CTest)
-include(Catch)
 
 enable_testing()
 
-add_library(default_project_cxx_flags INTERFACE)
-target_default_cxx_flags(default_project_cxx_flags INTERFACE
+add_library(target_default_options INTERFACE)
+target_default_cxx_flags(target_default_options INTERFACE
   WARNINGS_AS_ERRORS ${WARNINGS_AS_ERRORS}
   CODE_COVERAGE ${CODE_COVERAGE}
 )
+enable_clang_tidy(target_default_options)
 
 add_subdirectory(src)
 

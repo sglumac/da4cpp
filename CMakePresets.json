@@ -6,7 +6,6 @@
       "hidden": true,
       "binaryDir": "${sourceDir}/build/${presetName}",
       "cacheVariables": {
-        "CMAKE_CXX_CLANG_TIDY": "clang-tidy",
         "WARNINGS_AS_ERRORS": "ON"
       }
     },
