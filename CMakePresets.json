@@ -6,8 +6,7 @@
       "hidden": true,
       "binaryDir": "${sourceDir}/build/${presetName}",
       "cacheVariables": {
-        "WARNINGS_AS_ERRORS": "ON",
-        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake"
+        "WARNINGS_AS_ERRORS": "ON"
       }
     },
     {

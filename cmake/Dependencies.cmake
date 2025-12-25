@@ -2,11 +2,15 @@ find_package(LLVM REQUIRED CONFIG)
 find_package(Clang REQUIRED CONFIG)
 find_package(Doxygen REQUIRED)
 
-include(cmake/CPM.cmake)
-CPMUsePackageLock(cmake/cpm-package-lock.cmake)
+include(FetchContent)
 
-find_package(Catch2 REQUIRED)
-include(${Catch2_SOURCE_DIR}/extras/Catch.cmake)
+FetchContent_Declare(
+    doctest
+    GIT_REPOSITORY https://github.com/doctest/doctest.git
+    GIT_TAG v2.4.12
+)
+FetchContent_MakeAvailable(doctest)
+include(${doctest_SOURCE_DIR}/scripts/cmake/doctest.cmake)
 
 #CPMAddPackage(
 #  NAME PackageProject.cmake

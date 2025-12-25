@@ -1,5 +1,5 @@
-#include <catch2/catch_message.hpp>
-#include <catch2/catch_test_macros.hpp>
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include <doctest/doctest.h>
 #include <da4cpp/parsing.hpp>
 #include <filesystem>
 #include <map>
@@ -133,7 +133,7 @@ namespace {
       INFO(compare_maps(actualGraph, expectedGraph));
       REQUIRE((expectedGraph == actualGraph));
     } else {
-      FAIL("parse_translation_unit failed to parse" + resourcePath.string());
+      FAIL("parse_translation_unit failed to parse" << resourcePath.string());
     }
   }
 
