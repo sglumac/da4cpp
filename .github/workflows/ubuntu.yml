@@ -34,12 +34,10 @@ jobs:
             cmake-format \
             gcovr \
             graphviz \
-            doxygen
-
-      - name: Setup Clang
-        uses: egor-tensin/setup-clang@v1
-        with:
-          version: 18
+            doxygen \
+            clang-18 \
+            llvm-18-dev \
+            libclang-18-dev
 
       - name: clang-format
         uses: jidicula/clang-format-action@v4.11.0
