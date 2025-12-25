@@ -65,7 +65,7 @@ jobs:
         run: ctest --preset=clang-coverage --output-junit test-results.xml
 
       - name: generate coverage report
-        run: GCOV="llvm-cov gcov" gcovr --xml --output build/clang-coverage/coverage.xml
+        run: GCOV="llvm-cov-18 gcov" gcovr --xml --output build/clang-coverage/coverage.xml
 
       - name: upload coverage
         uses: codecov/codecov-action@v4
