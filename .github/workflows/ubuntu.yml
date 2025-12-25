@@ -69,6 +69,8 @@ jobs:
 
       - name: upload coverage
         uses: codecov/codecov-action@v4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
           files: build/clang-coverage/coverage.xml,build/clang-coverage/test-results.xml
           fail_ci_if_error: true
