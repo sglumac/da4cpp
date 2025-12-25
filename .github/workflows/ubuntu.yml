@@ -36,12 +36,10 @@ jobs:
             graphviz \
             doxygen
 
-      - name: Setup Clang
-        uses: egor-tensin/setup-clang@v2
+      - name: Install LLVM and Clang
+        uses: KyleMayes/install-llvm-action@v2
         with:
-          version: 18
-          platform: x64
-
+          version: "18"
 
       - name: clang-format
         uses: jidicula/clang-format-action@v4.11.0
