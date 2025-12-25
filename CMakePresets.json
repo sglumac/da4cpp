@@ -6,7 +6,8 @@
       "hidden": true,
       "binaryDir": "${sourceDir}/build/${presetName}",
       "cacheVariables": {
-        "WARNINGS_AS_ERRORS": "ON"
+        "WARNINGS_AS_ERRORS": "ON",
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake"
       }
     },
     {
@@ -30,7 +31,7 @@
       "name": "clang-debug",
       "inherits": "clang",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "DEBUG"
+        "CMAKE_BUILD_TYPE": "Debug"
       }
     },
     {
@@ -60,7 +61,7 @@
       "name": "gcc-debug",
       "inherits": "gcc",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "DEBUG"
+        "CMAKE_BUILD_TYPE": "Debug"
       }
     },
     {

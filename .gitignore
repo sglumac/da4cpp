@@ -1,7 +1,8 @@
-/build*
-/.vscode
-/cpm_modules
+build
+.vscode
+cpm_modules
 .DS_Store
 *.profraw
 compile_commands.json
+vcpkg_installed
 

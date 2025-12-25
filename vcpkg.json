@@ -1,0 +1,23 @@
+{
+  "builtin-baseline": "5d57f5a0a5469a23e005fc79a7c1814ab4fc967e",
+  "dependencies": [
+    {
+      "name": "llvm",
+      "default-features": false,
+      "features": [
+        "clang"
+      ]
+    },
+    "catch2"
+  ],
+  "overrides": [
+    {
+      "name": "llvm",
+      "version": "18.1.6"
+    },
+    {
+      "name": "catch2",
+      "version": "3.11.0"
+    }
+  ]
+}
