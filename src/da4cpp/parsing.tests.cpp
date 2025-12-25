@@ -1,5 +1,6 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
+
 #include <da4cpp/parsing.hpp>
 #include <filesystem>
 #include <map>
