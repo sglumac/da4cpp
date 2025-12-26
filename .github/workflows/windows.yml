@@ -1,38 +1,32 @@
-name: Windows
+name: Windows (MSVC)
 
 on:
   push:
-    branches:
-      - master
-      - main
+    branches: [ master ]
   pull_request:
-    branches:
-      - master
-      - main
+    branches: [ master ]
+  workflow_dispatch:
+    inputs:
+      branch:
+        required: false
+        default: master
 
 env:
   CTEST_OUTPUT_ON_FAILURE: 1
-  CPM_SOURCE_CACHE: ${{ github.workspace }}/cpm_modules
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/cache@v3
-        with:
-          path: "**/cpm_modules"
-          key: ${{ github.workflow }}-cpm-modules-${{ hashFiles('**/CMakeLists.txt', '**/*.cmake') }}
+      - uses: actions/checkout@v4
 
       - name: configure
-        run: cmake -Stest -Bbuild
+        run: cmake --preset=msvc-release
 
       - name: build
-        run: cmake --build build --config Debug -j4
+        run: cmake --build --parallel $(nproc) --preset=msvc-release
 
       - name: test
-        run: |
-          cd build
-          ctest --build-config Debug
+        run: ctest --preset=msvc-release
+
