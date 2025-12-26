@@ -23,6 +23,15 @@ jobs:
 
       - name: Install LLVM/Clang
         run: |
+          # Clone vcpkg (or use it as a submodule)
+          git clone https://github.com/Microsoft/vcpkg.git
+          .\vcpkg\bootstrap-vcpkg.bat
+          # Install the llvm package (this builds it)
+          .\vcpkg\vcpkg install llvm:x64-windows
+          # Tell CMake to use vcpkg's toolchain file
+          echo "VCPKG_ROOT=$env:GITHUB_WORKSPACE\vcpkg" >> $env:GITHUB_ENV
+
+        run: |
           winget install LLVM.LLVM --version 18.1.8 --disable-interactivity --accept-source-agreements --accept-package-agreements
 
       - name: configure
