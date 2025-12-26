@@ -21,6 +21,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install LLVM/Clang
+        run: |
+          winget install LLVM.LLVM --version 18.1.8 --disable-interactivity --accept-source-agreements --accept-package-agreements
+
       - name: configure
         run: cmake --preset=msvc-release
 
