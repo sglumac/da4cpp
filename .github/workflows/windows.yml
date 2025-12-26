@@ -21,10 +21,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install LLVM and Clang
-        uses: KyleMayes/install-llvm-action@v2
-        with:
-          version: "18"
+      - name: Install LLVM/Clang
+        run: |
+          choco install llvm --version 18.1.8 -y
+          # Refresh the PATH to find the newly installed tools
+          $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
       - name: configure
         run: cmake --preset=msvc-release
