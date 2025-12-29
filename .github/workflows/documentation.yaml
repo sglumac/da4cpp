@@ -3,31 +3,26 @@ name: Documentation
 on:
   push:
     tags:
-      - "*"
-
-env:
-  CPM_SOURCE_CACHE: ${{ github.workspace }}/cpm_modules
+      - "master"
 
 jobs:
-  build:
-    name: Build and publish documentation
+  build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: |
-          sudo apt-get install doxygen
-          pip3 install jinja2 Pygments
+      - name: Setup Doxygen
+        run: sudo apt-get install -y doxygen graphviz
 
-      - name: Build
-        run: |
-          cmake -Sdocumentation -Bbuild
-          cmake --build build --target GenerateDocs
+      - name: Generate Doxygen Documentation
+        run: doxygen Doxyfile
 
-      - name: Publish
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/doxygen/html
+          publish_dir: ./docs/html
