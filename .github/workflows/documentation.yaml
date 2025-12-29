@@ -20,7 +20,7 @@ jobs:
 
       - name: Generate Doxygen Documentation
         run: |
-          mkdir -p build/docs
+          mkdir -p build/docs/doxygen
           doxygen Doxyfile
 
       - name: Deploy to GitHub Pages
