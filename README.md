@@ -1,5 +1,6 @@
 [![Actions Status](https://github.com/sglumac/da4cpp/workflows/Ubuntu/badge.svg)](https://github.com/sglumac/da4cpp/actions)
 [![Documentation](https://github.com/sglumac/da4cpp/actions/workflows/documentation.yaml/badge.svg)](https://github.com/sglumac/da4cpp/actions/workflows/documentation.yaml)
+[![Docs - GitHub Pages](https://img.shields.io/badge/docs-GitHub_Pages-blue?logo=github)](https://sglumac.github.io/da4cpp/)
 [![codecov](https://codecov.io/gh/sglumac/da4cpp/branch/master/graph/badge.svg)](https://codecov.io/gh/sglumac/da4cpp)
 
 # da4cpp - Dependency Analysis for C++
@@ -11,7 +12,6 @@
 - Parses C++ source and header files
 - Extracts and visualizes dependencies between classes, functions, and modules
 - Generates dependency graphs
-- Supports customizable output formats
 - Helps in identifying cyclic dependencies and unused code
 
 ## Installation
