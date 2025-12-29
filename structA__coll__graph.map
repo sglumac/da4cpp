@@ -1,0 +1,5 @@
+<map id="A" name="A">
+<area shape="rect" id="Node000001" title="Struct A that contains a pointer to struct B." alt="" coords="7,93,46,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,48,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="29,45,29,93,24,93,24,45"/>
+</map>
