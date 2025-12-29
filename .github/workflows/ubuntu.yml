@@ -34,10 +34,9 @@ jobs:
             cmake-format \
             gcovr \
             graphviz \
-            doxygen \
-            clang-18 \
-            llvm-18-dev \
-            libclang-18-dev
+            clang \
+            llvm-dev \
+            libclang-dev
 
       - name: clang-format
         uses: jidicula/clang-format-action@v4.11.0
@@ -59,7 +58,7 @@ jobs:
 
       - name: generate coverage report
         run: |
-          GCOV="llvm-cov-18 gcov" gcovr \
+          GCOV="llvm-cov gcov" gcovr \
             --xml --output build/clang-coverage/coverage.xml \
             --exclude-unreachable-branches \
             --print-summary
