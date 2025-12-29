@@ -1,4 +1,5 @@
 [![Actions Status](https://github.com/sglumac/da4cpp/workflows/Ubuntu/badge.svg)](https://github.com/sglumac/da4cpp/actions)
+[![Documentation](https://github.com/sglumac/da4cpp/actions/workflows/documentation.yaml/badge.svg)](https://github.com/sglumac/da4cpp/actions/workflows/documentation.yaml)
 [![codecov](https://codecov.io/gh/sglumac/da4cpp/branch/master/graph/badge.svg)](https://codecov.io/gh/sglumac/da4cpp)
 
 # da4cpp - Dependency Analysis for C++
