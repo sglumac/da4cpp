@@ -19,10 +19,12 @@ jobs:
         run: sudo apt-get install -y doxygen graphviz
 
       - name: Generate Doxygen Documentation
-        run: doxygen Doxyfile
+        run: |
+          mkdir -p build/docs
+          doxygen Doxyfile
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/html
+          publish_dir: ./build/docs/doxygen/html
