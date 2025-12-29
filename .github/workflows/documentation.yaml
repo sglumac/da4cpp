@@ -18,10 +18,11 @@ jobs:
       - name: Setup Doxygen
         run: sudo apt-get install -y doxygen graphviz
 
-      - name: Generate Doxygen Documentation
-        run: |
-          mkdir -p build/docs/doxygen
-          doxygen Doxyfile
+      - name: Create docs output directory
+        run: mkdir -p build/docs/doxygen
+
+      - name: Generate Doxygen documentation
+        run: doxygen Doxyfile
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
