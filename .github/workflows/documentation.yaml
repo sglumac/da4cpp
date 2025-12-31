@@ -23,8 +23,8 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y doxygen graphviz
-          pip install -r requirements_docs.txt
+          sudo apt-get install -y doxygen graphviz plantuml
+          pip install -r requirements-docs.txt
 
       - name: Build documentation
         run: |
