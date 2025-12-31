@@ -1,0 +1,14 @@
+.. _exhale_define_parsing_8tests_8cpp_1a623b8690a262536536a43eab2d7df03d:
+
+Define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+=========================================
+
+- Defined in :ref:`file_src_da4cpp_parsing.tests.cpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+   :project: da4cpp

@@ -1,0 +1,1024 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Reference &mdash; da4cpp 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Namespace anonymous_namespace{parsing.cpp}" href="namespace_anonymous_namespace%7Bparsing.cpp%7D.html" />
+    <link rel="prev" title="da4cpp documentation" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            da4cpp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#full-api">Full API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#namespaces">Namespaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="namespace_anonymous_namespace%7Bparsing.cpp%7D.html">Namespace anonymous_namespace{parsing.cpp}</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_anonymous_namespace%7Bparsing.tests.cpp%7D.html">Namespace anonymous_namespace{parsing.tests.cpp}</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_da4cpp.html">Namespace da4cpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_da4cpp__graph.html">Namespace da4cpp::graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_da4cpp__parsing.html">Namespace da4cpp::parsing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes-and-structs">Classes and Structs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structda4cpp_1_1graph_1_1Dependency.html">Struct Dependency</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structda4cpp_1_1graph_1_1Symbol.html">Struct Symbol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structSymbolMatch.html">Struct SymbolMatch</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#enums">Enums</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html">Enum SymbolType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html">Enum SymbolType</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1af79e03782424be4e1a517055707cd279.html">Function from_cursor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a25f53986484be2ac058c92250f530903.html">Function from_cursor_and_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ae92d161dbb289c3c10e758429f4b7474.html">Function function_declaration_from_cursor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a818da856d671a2d0ca81b2f95f3dfb19.html">Function function_definition_from_cursor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ac430d3ad690250bf8698fab850116d7d.html">Function get_symbol_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a76127554ea719311c60dbcfb5b0658fe.html">Function is_function_declaration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1adf80a2f5cae79ba4804a25cda160a0b2.html">Function is_function_definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1abab7bd0f0109068ff38de441e1744d81.html">Function is_function_reference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a8bf92ac02f27af018c01f386dff0da61.html">Function is_struct_declaration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a0f6c6e5cc86c194419253e8785fd796c.html">Function is_struct_definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a0aadd31ac60a10d17fa33a165798ba0a.html">Function is_struct_reference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ace99474350c6495751d9fdfd956c103c.html">Function process_function_declaration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a27ae436fd9b015a24e644bbde3fe1d7e.html">Function process_function_definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a5e5476668f221690a8cbd6cf344ea16d.html">Function process_struct_declaration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a2d8978993a237d43d6cf4e89bbd6954e.html">Function process_struct_definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a2e5f4d2119d474a411999a56e841362f.html">Function to_string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ae5ca2ed8d8b036fa670fea524f681b78.html">Function type_declaration_from_cursor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1aef45c84c2b40d344682f0914cc3ed8da.html">Function type_definition_from_cursor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a97f9c426f6f9d16ec04104bbeac1db3c.html">Function visit_function_definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1aeb5e295d5faa38a298f59077b4879cf5.html">Function visit_node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a8535e931bdbe5a7de0c19059f659d7e5.html">Function visit_struct_definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a3c5b333cb92f7e9d930f98bfa2554002.html">Function check_dependency_graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1aeb4be9eaa7bf4dee7436b54c5ab0b72a.html">Function compare_maps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1af6f563ab94ffedc93c07c4dd3bff8a7e.html">Function get_symbol_constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a82a446d19be51f22543b3d3e888c46b0.html">Function operator&lt;&lt;(std::ostream&amp;, const Symbol&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1ad8d7cd6e821a8d28002a1f4a2ca9c2bb.html">Function operator&lt;&lt;(std::ostream&amp;, const Dependencies&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a7c9838bee5c522f07bb5fa14677885c4.html">Function resources_dir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a3c5b333cb92f7e9d930f98bfa2554002.html">Function check_dependency_graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1aeb4be9eaa7bf4dee7436b54c5ab0b72a.html">Function compare_maps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceda4cpp_1_1parsing_1a6fe77e69e4cc733f83016edfd139ca81.html">Function parse_translation_unit()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1af79e03782424be4e1a517055707cd279.html">Function from_cursor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a25f53986484be2ac058c92250f530903.html">Function from_cursor_and_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ae92d161dbb289c3c10e758429f4b7474.html">Function function_declaration_from_cursor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a818da856d671a2d0ca81b2f95f3dfb19.html">Function function_definition_from_cursor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1af6f563ab94ffedc93c07c4dd3bff8a7e.html">Function get_symbol_constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ac430d3ad690250bf8698fab850116d7d.html">Function get_symbol_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a76127554ea719311c60dbcfb5b0658fe.html">Function is_function_declaration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1adf80a2f5cae79ba4804a25cda160a0b2.html">Function is_function_definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1abab7bd0f0109068ff38de441e1744d81.html">Function is_function_reference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a8bf92ac02f27af018c01f386dff0da61.html">Function is_struct_declaration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a0f6c6e5cc86c194419253e8785fd796c.html">Function is_struct_definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a0aadd31ac60a10d17fa33a165798ba0a.html">Function is_struct_reference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_main_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627.html">Function main</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a82a446d19be51f22543b3d3e888c46b0.html">Function operator&lt;&lt;(std::ostream&amp;, const Symbol&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1ad8d7cd6e821a8d28002a1f4a2ca9c2bb.html">Function operator&lt;&lt;(std::ostream&amp;, const Dependencies&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceda4cpp_1_1parsing_1a6fe77e69e4cc733f83016edfd139ca81.html">Function parse_translation_unit()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceda4cpp_1_1parsing_1a6fe77e69e4cc733f83016edfd139ca81.html">Function parse_translation_unit()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ace99474350c6495751d9fdfd956c103c.html">Function process_function_declaration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a27ae436fd9b015a24e644bbde3fe1d7e.html">Function process_function_definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a5e5476668f221690a8cbd6cf344ea16d.html">Function process_struct_declaration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a2d8978993a237d43d6cf4e89bbd6954e.html">Function process_struct_definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a7c9838bee5c522f07bb5fa14677885c4.html">Function resources_dir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_parsing_8tests_8cpp_1a857b53fea9226a375d19903304153d44.html">Function TEST_CASE(“function_call”)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_parsing_8tests_8cpp_1addc7e33df63574f7dd04e63135cd37bd.html">Function TEST_CASE(“struct_reference”)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_parsing_8tests_8cpp_1aa8e4c0f5c4331752b982f5a51d00c6d8.html">Function TEST_CASE(“struct_forward_declaration”)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a2e5f4d2119d474a411999a56e841362f.html">Function to_string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ae5ca2ed8d8b036fa670fea524f681b78.html">Function type_declaration_from_cursor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1aef45c84c2b40d344682f0914cc3ed8da.html">Function type_definition_from_cursor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a97f9c426f6f9d16ec04104bbeac1db3c.html">Function visit_function_definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1aeb5e295d5faa38a298f59077b4879cf5.html">Function visit_node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a8535e931bdbe5a7de0c19059f659d7e5.html">Function visit_struct_definition</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#defines">Defines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="define_parsing_8tests_8cpp_1a623b8690a262536536a43eab2d7df03d.html">Define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#typedefs">Typedefs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1aed5ae99d86440861c2cc2e3e5fd9203e.html">Typedef CursorHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1a7b75726b88e5d9d4902a0b12b87e5d2e.html">Typedef CursorHandlers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1abb4249e465d3a45d17b921914d466c08.html">Typedef CursorProcessor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1a1a4b4d96d5ebb0f33aec9115c9d9b198.html">Typedef ProcessingCondition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1adf1f3f35bfc0d1bfccb30d8ac98b7ffd.html">Typedef TestParameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1aed5ae99d86440861c2cc2e3e5fd9203e.html">Typedef CursorHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1a7b75726b88e5d9d4902a0b12b87e5d2e.html">Typedef CursorHandlers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1abb4249e465d3a45d17b921914d466c08.html">Typedef CursorProcessor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespaceda4cpp_1_1graph_1a3c3452ffee7c04ccffb0f35d8c713c68.html">Typedef Dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespaceda4cpp_1_1graph_1a2a74a614f4148607b26a74f60bc16a1a.html">Typedef DependencyGraph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespaceda4cpp_1_1graph_1a3c3452ffee7c04ccffb0f35d8c713c68.html">Typedef Dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespaceda4cpp_1_1graph_1a2a74a614f4148607b26a74f60bc16a1a.html">Typedef DependencyGraph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1a1a4b4d96d5ebb0f33aec9115c9d9b198.html">Typedef ProcessingCondition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_parsing_8cpp_1ac4f2e381856feec24d9d9df051e5be20.html">Typedef SymbolAndDependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1adf1f3f35bfc0d1bfccb30d8ac98b7ffd.html">Typedef TestParameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">da4cpp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/library_root.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api-reference">
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading"></a></h1>
+<section id="class-hierarchy">
+<h2>Class Hierarchy<a class="headerlink" href="#class-hierarchy" title="Link to this heading"></a></h2>
+<ul class="treeView" id="class-treeView">
+  <li>
+    <ul class="collapsibleList">
+      <li>Namespace <a href="namespace_da4cpp.html#namespace-da4cpp">da4cpp</a><ul><li class="lastChild">Namespace <a href="namespace_da4cpp__graph.html#namespace-da4cpp-graph">da4cpp::graph</a><ul><li>Struct <a href="structda4cpp_1_1graph_1_1Dependency.html#exhale-struct-structda4cpp-1-1graph-1-1Dependency">Dependency</a></li><li>Struct <a href="structda4cpp_1_1graph_1_1Symbol.html#exhale-struct-structda4cpp-1-1graph-1-1Symbol">Symbol</a></li><li class="lastChild">Enum <a href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#exhale-enum-namespaceda4cpp-1-1graph-1acb47f4bad707fb2183daf8b515885cf9">SymbolType</a></li></ul></li></ul></li><li>Struct <a href="structSymbolMatch.html#exhale-struct-structSymbolMatch">SymbolMatch</a></li><li class="lastChild">Enum <a href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#exhale-enum-namespaceda4cpp-1-1graph-1acb47f4bad707fb2183daf8b515885cf9">SymbolType</a></li>
+    </ul>
+  </li><!-- only tree view element -->
+</ul><!-- /treeView class-treeView --></section>
+<section id="file-hierarchy">
+<h2>File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Link to this heading"></a></h2>
+<ul class="treeView" id="file-treeView">
+  <li>
+    <ul class="collapsibleList">
+      <li class="lastChild">Directory <a href="dir_src.html#dir-src">src</a><ul><li>Directory <a href="dir_src_da4cpp.html#dir-src-da4cpp">da4cpp</a><ul><li>File <a href="file_src_da4cpp_graph.cpp.html#file-src-da4cpp-graph.cpp">graph.cpp</a></li><li>File <a href="file_src_da4cpp_graph.hpp.html#file-src-da4cpp-graph.hpp">graph.hpp</a></li><li>File <a href="file_src_da4cpp_parsing.cpp.html#file-src-da4cpp-parsing.cpp">parsing.cpp</a></li><li>File <a href="file_src_da4cpp_parsing.hpp.html#file-src-da4cpp-parsing.hpp">parsing.hpp</a></li><li class="lastChild">File <a href="file_src_da4cpp_parsing.tests.cpp.html#file-src-da4cpp-parsing.tests.cpp">parsing.tests.cpp</a></li></ul></li><li>File <a href="file_src_da4cpp.cpp.html#file-src-da4cpp.cpp">da4cpp.cpp</a></li><li>File <a href="file_src_da4cpp.hpp.html#file-src-da4cpp.hpp">da4cpp.hpp</a></li><li class="lastChild">File <a href="file_src_main.cpp.html#file-src-main.cpp">main.cpp</a></li></ul></li>
+    </ul>
+  </li><!-- only tree view element -->
+</ul><!-- /treeView file-treeView --></section>
+<section id="full-api">
+<h2>Full API<a class="headerlink" href="#full-api" title="Link to this heading"></a></h2>
+<section id="namespaces">
+<h3>Namespaces<a class="headerlink" href="#namespaces" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_anonymous_namespace%7Bparsing.cpp%7D.html">Namespace anonymous_namespace{parsing.cpp}</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_anonymous_namespace%7Bparsing.cpp%7D.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_anonymous_namespace%7Bparsing.cpp%7D.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_anonymous_namespace%7Bparsing.tests.cpp%7D.html">Namespace anonymous_namespace{parsing.tests.cpp}</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_anonymous_namespace%7Bparsing.tests.cpp%7D.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_anonymous_namespace%7Bparsing.tests.cpp%7D.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_da4cpp.html">Namespace da4cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_da4cpp.html#namespaces">Namespaces</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_da4cpp__graph.html">Namespace da4cpp::graph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_da4cpp__graph.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_da4cpp__graph.html#enums">Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_da4cpp__graph.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_da4cpp__parsing.html">Namespace da4cpp::parsing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_da4cpp__parsing.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="classes-and-structs">
+<h3>Classes and Structs<a class="headerlink" href="#classes-and-structs" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structda4cpp_1_1graph_1_1Dependency.html">Struct Dependency</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structda4cpp_1_1graph_1_1Dependency.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structda4cpp_1_1graph_1_1Dependency.html#_CPPv4N6da4cpp5graph10DependencyE"><code class="docutils literal notranslate"><span class="pre">da4cpp::graph::Dependency</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structda4cpp_1_1graph_1_1Dependency.html#_CPPv4N6da4cpp5graph10Dependency6sourceE"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structda4cpp_1_1graph_1_1Dependency.html#_CPPv4N6da4cpp5graph10Dependency6targetE"><code class="docutils literal notranslate"><span class="pre">target</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structda4cpp_1_1graph_1_1Symbol.html">Struct Symbol</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structda4cpp_1_1graph_1_1Symbol.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structda4cpp_1_1graph_1_1Symbol.html#_CPPv4N6da4cpp5graph6SymbolE"><code class="docutils literal notranslate"><span class="pre">da4cpp::graph::Symbol</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structda4cpp_1_1graph_1_1Symbol.html#_CPPv4NK6da4cpp5graph6SymbolssERK6Symbol"><code class="docutils literal notranslate"><span class="pre">operator&lt;=&gt;()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structda4cpp_1_1graph_1_1Symbol.html#_CPPv4N6da4cpp5graph6Symbol8filePathE"><code class="docutils literal notranslate"><span class="pre">filePath</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structda4cpp_1_1graph_1_1Symbol.html#_CPPv4N6da4cpp5graph6Symbol4lineE"><code class="docutils literal notranslate"><span class="pre">line</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structda4cpp_1_1graph_1_1Symbol.html#_CPPv4N6da4cpp5graph6Symbol6columnE"><code class="docutils literal notranslate"><span class="pre">column</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structda4cpp_1_1graph_1_1Symbol.html#_CPPv4N6da4cpp5graph6Symbol4nameE"><code class="docutils literal notranslate"><span class="pre">name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structda4cpp_1_1graph_1_1Symbol.html#_CPPv4N6da4cpp5graph6Symbol10symbolTypeE"><code class="docutils literal notranslate"><span class="pre">symbolType</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structSymbolMatch.html">Struct SymbolMatch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structSymbolMatch.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structSymbolMatch.html#_CPPv411SymbolMatch"><code class="docutils literal notranslate"><span class="pre">SymbolMatch</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structSymbolMatch.html#_CPPv4NK11SymbolMatchclERK6Symbol"><code class="docutils literal notranslate"><span class="pre">operator()()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structSymbolMatch.html#_CPPv4N11SymbolMatch8filepathE"><code class="docutils literal notranslate"><span class="pre">filepath</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structSymbolMatch.html#_CPPv4N11SymbolMatch10symbolTypeE"><code class="docutils literal notranslate"><span class="pre">symbolType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structSymbolMatch.html#_CPPv4N11SymbolMatch4nameE"><code class="docutils literal notranslate"><span class="pre">name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="enums">
+<h3>Enums<a class="headerlink" href="#enums" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html">Enum SymbolType</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#_CPPv4N6da4cpp5graph10SymbolTypeE"><code class="docutils literal notranslate"><span class="pre">SymbolType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#_CPPv4N6da4cpp5graph10SymbolType18FunctionDefinitionE"><code class="docutils literal notranslate"><span class="pre">FunctionDefinition</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#_CPPv4N6da4cpp5graph10SymbolType19FunctionDeclarationE"><code class="docutils literal notranslate"><span class="pre">FunctionDeclaration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#_CPPv4N6da4cpp5graph10SymbolType15TypeDeclarationE"><code class="docutils literal notranslate"><span class="pre">TypeDeclaration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#_CPPv4N6da4cpp5graph10SymbolType14TypeDefinitionE"><code class="docutils literal notranslate"><span class="pre">TypeDefinition</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#_CPPv4N6da4cpp5graph10SymbolType19VariableDeclarationE"><code class="docutils literal notranslate"><span class="pre">VariableDeclaration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#_CPPv4N6da4cpp5graph10SymbolType18VariableDefinitionE"><code class="docutils literal notranslate"><span class="pre">VariableDefinition</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html">Enum SymbolType</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#_CPPv4N6da4cpp5graph10SymbolTypeE"><code class="docutils literal notranslate"><span class="pre">SymbolType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#_CPPv4N6da4cpp5graph10SymbolType18FunctionDefinitionE"><code class="docutils literal notranslate"><span class="pre">FunctionDefinition</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#_CPPv4N6da4cpp5graph10SymbolType19FunctionDeclarationE"><code class="docutils literal notranslate"><span class="pre">FunctionDeclaration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#_CPPv4N6da4cpp5graph10SymbolType15TypeDeclarationE"><code class="docutils literal notranslate"><span class="pre">TypeDeclaration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#_CPPv4N6da4cpp5graph10SymbolType14TypeDefinitionE"><code class="docutils literal notranslate"><span class="pre">TypeDefinition</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#_CPPv4N6da4cpp5graph10SymbolType19VariableDeclarationE"><code class="docutils literal notranslate"><span class="pre">VariableDeclaration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespaceda4cpp_1_1graph_1acb47f4bad707fb2183daf8b515885cf9.html#_CPPv4N6da4cpp5graph10SymbolType18VariableDefinitionE"><code class="docutils literal notranslate"><span class="pre">VariableDefinition</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1af79e03782424be4e1a517055707cd279.html">Function from_cursor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1af79e03782424be4e1a517055707cd279.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a25f53986484be2ac058c92250f530903.html">Function from_cursor_and_name</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a25f53986484be2ac058c92250f530903.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ae92d161dbb289c3c10e758429f4b7474.html">Function function_declaration_from_cursor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ae92d161dbb289c3c10e758429f4b7474.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a818da856d671a2d0ca81b2f95f3dfb19.html">Function function_definition_from_cursor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a818da856d671a2d0ca81b2f95f3dfb19.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ac430d3ad690250bf8698fab850116d7d.html">Function get_symbol_name</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ac430d3ad690250bf8698fab850116d7d.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a76127554ea719311c60dbcfb5b0658fe.html">Function is_function_declaration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a76127554ea719311c60dbcfb5b0658fe.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1adf80a2f5cae79ba4804a25cda160a0b2.html">Function is_function_definition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1adf80a2f5cae79ba4804a25cda160a0b2.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1abab7bd0f0109068ff38de441e1744d81.html">Function is_function_reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1abab7bd0f0109068ff38de441e1744d81.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a8bf92ac02f27af018c01f386dff0da61.html">Function is_struct_declaration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a8bf92ac02f27af018c01f386dff0da61.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a0f6c6e5cc86c194419253e8785fd796c.html">Function is_struct_definition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a0f6c6e5cc86c194419253e8785fd796c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a0aadd31ac60a10d17fa33a165798ba0a.html">Function is_struct_reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a0aadd31ac60a10d17fa33a165798ba0a.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ace99474350c6495751d9fdfd956c103c.html">Function process_function_declaration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ace99474350c6495751d9fdfd956c103c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a27ae436fd9b015a24e644bbde3fe1d7e.html">Function process_function_definition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a27ae436fd9b015a24e644bbde3fe1d7e.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a5e5476668f221690a8cbd6cf344ea16d.html">Function process_struct_declaration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a5e5476668f221690a8cbd6cf344ea16d.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a2d8978993a237d43d6cf4e89bbd6954e.html">Function process_struct_definition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a2d8978993a237d43d6cf4e89bbd6954e.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a2e5f4d2119d474a411999a56e841362f.html">Function to_string</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a2e5f4d2119d474a411999a56e841362f.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ae5ca2ed8d8b036fa670fea524f681b78.html">Function type_declaration_from_cursor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ae5ca2ed8d8b036fa670fea524f681b78.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1aef45c84c2b40d344682f0914cc3ed8da.html">Function type_definition_from_cursor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1aef45c84c2b40d344682f0914cc3ed8da.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a97f9c426f6f9d16ec04104bbeac1db3c.html">Function visit_function_definition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a97f9c426f6f9d16ec04104bbeac1db3c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1aeb5e295d5faa38a298f59077b4879cf5.html">Function visit_node</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1aeb5e295d5faa38a298f59077b4879cf5.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a8535e931bdbe5a7de0c19059f659d7e5.html">Function visit_struct_definition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a8535e931bdbe5a7de0c19059f659d7e5.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a3c5b333cb92f7e9d930f98bfa2554002.html">Function check_dependency_graph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a3c5b333cb92f7e9d930f98bfa2554002.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1aeb4be9eaa7bf4dee7436b54c5ab0b72a.html">Function compare_maps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1aeb4be9eaa7bf4dee7436b54c5ab0b72a.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1af6f563ab94ffedc93c07c4dd3bff8a7e.html">Function get_symbol_constructor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1af6f563ab94ffedc93c07c4dd3bff8a7e.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a82a446d19be51f22543b3d3e888c46b0.html">Function operator&lt;&lt;(std::ostream&amp;, const Symbol&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a82a446d19be51f22543b3d3e888c46b0.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1ad8d7cd6e821a8d28002a1f4a2ca9c2bb.html">Function operator&lt;&lt;(std::ostream&amp;, const Dependencies&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1ad8d7cd6e821a8d28002a1f4a2ca9c2bb.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a7c9838bee5c522f07bb5fa14677885c4.html">Function resources_dir</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a7c9838bee5c522f07bb5fa14677885c4.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a3c5b333cb92f7e9d930f98bfa2554002.html">Function check_dependency_graph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a3c5b333cb92f7e9d930f98bfa2554002.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1aeb4be9eaa7bf4dee7436b54c5ab0b72a.html">Function compare_maps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1aeb4be9eaa7bf4dee7436b54c5ab0b72a.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceda4cpp_1_1parsing_1a6fe77e69e4cc733f83016edfd139ca81.html">Function parse_translation_unit()</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceda4cpp_1_1parsing_1a6fe77e69e4cc733f83016edfd139ca81.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1af79e03782424be4e1a517055707cd279.html">Function from_cursor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1af79e03782424be4e1a517055707cd279.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a25f53986484be2ac058c92250f530903.html">Function from_cursor_and_name</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a25f53986484be2ac058c92250f530903.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ae92d161dbb289c3c10e758429f4b7474.html">Function function_declaration_from_cursor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ae92d161dbb289c3c10e758429f4b7474.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a818da856d671a2d0ca81b2f95f3dfb19.html">Function function_definition_from_cursor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a818da856d671a2d0ca81b2f95f3dfb19.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1af6f563ab94ffedc93c07c4dd3bff8a7e.html">Function get_symbol_constructor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1af6f563ab94ffedc93c07c4dd3bff8a7e.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ac430d3ad690250bf8698fab850116d7d.html">Function get_symbol_name</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ac430d3ad690250bf8698fab850116d7d.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a76127554ea719311c60dbcfb5b0658fe.html">Function is_function_declaration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a76127554ea719311c60dbcfb5b0658fe.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1adf80a2f5cae79ba4804a25cda160a0b2.html">Function is_function_definition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1adf80a2f5cae79ba4804a25cda160a0b2.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1abab7bd0f0109068ff38de441e1744d81.html">Function is_function_reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1abab7bd0f0109068ff38de441e1744d81.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a8bf92ac02f27af018c01f386dff0da61.html">Function is_struct_declaration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a8bf92ac02f27af018c01f386dff0da61.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a0f6c6e5cc86c194419253e8785fd796c.html">Function is_struct_definition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a0f6c6e5cc86c194419253e8785fd796c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a0aadd31ac60a10d17fa33a165798ba0a.html">Function is_struct_reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a0aadd31ac60a10d17fa33a165798ba0a.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_main_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627.html">Function main</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_main_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a82a446d19be51f22543b3d3e888c46b0.html">Function operator&lt;&lt;(std::ostream&amp;, const Symbol&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a82a446d19be51f22543b3d3e888c46b0.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1ad8d7cd6e821a8d28002a1f4a2ca9c2bb.html">Function operator&lt;&lt;(std::ostream&amp;, const Dependencies&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1ad8d7cd6e821a8d28002a1f4a2ca9c2bb.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceda4cpp_1_1parsing_1a6fe77e69e4cc733f83016edfd139ca81.html">Function parse_translation_unit()</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceda4cpp_1_1parsing_1a6fe77e69e4cc733f83016edfd139ca81.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceda4cpp_1_1parsing_1a6fe77e69e4cc733f83016edfd139ca81.html">Function parse_translation_unit()</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceda4cpp_1_1parsing_1a6fe77e69e4cc733f83016edfd139ca81.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ace99474350c6495751d9fdfd956c103c.html">Function process_function_declaration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ace99474350c6495751d9fdfd956c103c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a27ae436fd9b015a24e644bbde3fe1d7e.html">Function process_function_definition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a27ae436fd9b015a24e644bbde3fe1d7e.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a5e5476668f221690a8cbd6cf344ea16d.html">Function process_struct_declaration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a5e5476668f221690a8cbd6cf344ea16d.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a2d8978993a237d43d6cf4e89bbd6954e.html">Function process_struct_definition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a2d8978993a237d43d6cf4e89bbd6954e.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a7c9838bee5c522f07bb5fa14677885c4.html">Function resources_dir</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1a7c9838bee5c522f07bb5fa14677885c4.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_parsing_8tests_8cpp_1a857b53fea9226a375d19903304153d44.html">Function TEST_CASE(“function_call”)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_parsing_8tests_8cpp_1a857b53fea9226a375d19903304153d44.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_parsing_8tests_8cpp_1addc7e33df63574f7dd04e63135cd37bd.html">Function TEST_CASE(“struct_reference”)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_parsing_8tests_8cpp_1addc7e33df63574f7dd04e63135cd37bd.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_parsing_8tests_8cpp_1aa8e4c0f5c4331752b982f5a51d00c6d8.html">Function TEST_CASE(“struct_forward_declaration”)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_parsing_8tests_8cpp_1aa8e4c0f5c4331752b982f5a51d00c6d8.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a2e5f4d2119d474a411999a56e841362f.html">Function to_string</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a2e5f4d2119d474a411999a56e841362f.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ae5ca2ed8d8b036fa670fea524f681b78.html">Function type_declaration_from_cursor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1ae5ca2ed8d8b036fa670fea524f681b78.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1aef45c84c2b40d344682f0914cc3ed8da.html">Function type_definition_from_cursor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1aef45c84c2b40d344682f0914cc3ed8da.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a97f9c426f6f9d16ec04104bbeac1db3c.html">Function visit_function_definition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a97f9c426f6f9d16ec04104bbeac1db3c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1aeb5e295d5faa38a298f59077b4879cf5.html">Function visit_node</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1aeb5e295d5faa38a298f59077b4879cf5.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a8535e931bdbe5a7de0c19059f659d7e5.html">Function visit_struct_definition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanonymous__namespace_02parsing_8cpp_03_1a8535e931bdbe5a7de0c19059f659d7e5.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="defines">
+<h3>Defines<a class="headerlink" href="#defines" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_parsing_8tests_8cpp_1a623b8690a262536536a43eab2d7df03d.html">Define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_parsing_8tests_8cpp_1a623b8690a262536536a43eab2d7df03d.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="typedefs">
+<h3>Typedefs<a class="headerlink" href="#typedefs" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1aed5ae99d86440861c2cc2e3e5fd9203e.html">Typedef CursorHandler</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1aed5ae99d86440861c2cc2e3e5fd9203e.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1a7b75726b88e5d9d4902a0b12b87e5d2e.html">Typedef CursorHandlers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1a7b75726b88e5d9d4902a0b12b87e5d2e.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1abb4249e465d3a45d17b921914d466c08.html">Typedef CursorProcessor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1abb4249e465d3a45d17b921914d466c08.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1a1a4b4d96d5ebb0f33aec9115c9d9b198.html">Typedef ProcessingCondition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1a1a4b4d96d5ebb0f33aec9115c9d9b198.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1adf1f3f35bfc0d1bfccb30d8ac98b7ffd.html">Typedef TestParameters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1adf1f3f35bfc0d1bfccb30d8ac98b7ffd.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1aed5ae99d86440861c2cc2e3e5fd9203e.html">Typedef CursorHandler</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1aed5ae99d86440861c2cc2e3e5fd9203e.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1a7b75726b88e5d9d4902a0b12b87e5d2e.html">Typedef CursorHandlers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1a7b75726b88e5d9d4902a0b12b87e5d2e.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1abb4249e465d3a45d17b921914d466c08.html">Typedef CursorProcessor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1abb4249e465d3a45d17b921914d466c08.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceda4cpp_1_1graph_1a3c3452ffee7c04ccffb0f35d8c713c68.html">Typedef Dependencies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceda4cpp_1_1graph_1a3c3452ffee7c04ccffb0f35d8c713c68.html#typedef-documentation">Typedef Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="typedef_namespaceda4cpp_1_1graph_1a3c3452ffee7c04ccffb0f35d8c713c68.html#_CPPv4N6da4cpp5graph12DependenciesE"><code class="docutils literal notranslate"><span class="pre">Dependencies</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceda4cpp_1_1graph_1a2a74a614f4148607b26a74f60bc16a1a.html">Typedef DependencyGraph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceda4cpp_1_1graph_1a2a74a614f4148607b26a74f60bc16a1a.html#typedef-documentation">Typedef Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="typedef_namespaceda4cpp_1_1graph_1a2a74a614f4148607b26a74f60bc16a1a.html#_CPPv4N6da4cpp5graph15DependencyGraphE"><code class="docutils literal notranslate"><span class="pre">DependencyGraph</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceda4cpp_1_1graph_1a3c3452ffee7c04ccffb0f35d8c713c68.html">Typedef Dependencies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceda4cpp_1_1graph_1a3c3452ffee7c04ccffb0f35d8c713c68.html#typedef-documentation">Typedef Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="typedef_namespaceda4cpp_1_1graph_1a3c3452ffee7c04ccffb0f35d8c713c68.html#_CPPv4N6da4cpp5graph12DependenciesE"><code class="docutils literal notranslate"><span class="pre">Dependencies</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceda4cpp_1_1graph_1a2a74a614f4148607b26a74f60bc16a1a.html">Typedef DependencyGraph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceda4cpp_1_1graph_1a2a74a614f4148607b26a74f60bc16a1a.html#typedef-documentation">Typedef Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="typedef_namespaceda4cpp_1_1graph_1a2a74a614f4148607b26a74f60bc16a1a.html#_CPPv4N6da4cpp5graph15DependencyGraphE"><code class="docutils literal notranslate"><span class="pre">DependencyGraph</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1a1a4b4d96d5ebb0f33aec9115c9d9b198.html">Typedef ProcessingCondition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8cpp_03_1a1a4b4d96d5ebb0f33aec9115c9d9b198.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_parsing_8cpp_1ac4f2e381856feec24d9d9df051e5be20.html">Typedef SymbolAndDependencies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_parsing_8cpp_1ac4f2e381856feec24d9d9df051e5be20.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1adf1f3f35bfc0d1bfccb30d8ac98b7ffd.html">Typedef TestParameters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceanonymous__namespace_02parsing_8tests_8cpp_03_1adf1f3f35bfc0d1bfccb30d8ac98b7ffd.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="da4cpp documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="namespace_anonymous_namespace%7Bparsing.cpp%7D.html" class="btn btn-neutral float-right" title="Namespace anonymous_namespace{parsing.cpp}" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Slaven Glumac.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

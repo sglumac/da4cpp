@@ -1,0 +1,253 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File parsing.tests.cpp &mdash; da4cpp 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            da4cpp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="library_root.html">API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">da4cpp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File parsing.tests.cpp</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_src_da4cpp_parsing.tests.cpp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-parsing-tests-cpp">
+<span id="program-listing-file-src-da4cpp-parsing-tests-cpp"></span><h1>Program Listing for File parsing.tests.cpp<a class="headerlink" href="#program-listing-for-file-parsing-tests-cpp" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="file_src_da4cpp_parsing.tests.cpp.html#file-src-da4cpp-parsing-tests-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">src/da4cpp/parsing.tests.cpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;doctest/doctest.h&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;da4cpp/parsing.hpp&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;filesystem&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;map&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;optional&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;tuple&gt;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">da4cpp</span><span class="o">::</span><span class="n">graph</span><span class="o">::</span><span class="n">Dependencies</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">da4cpp</span><span class="o">::</span><span class="n">graph</span><span class="o">::</span><span class="n">DependencyGraph</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">da4cpp</span><span class="o">::</span><span class="n">graph</span><span class="o">::</span><span class="n">Symbol</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">da4cpp</span><span class="o">::</span><span class="n">graph</span><span class="o">::</span><span class="n">SymbolType</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">da4cpp</span><span class="o">::</span><span class="n">parsing</span><span class="o">::</span><span class="n">parse_translation_unit</span><span class="p">;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">SymbolMatch</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">filepath</span><span class="p">;</span>
+<span class="w">  </span><span class="n">SymbolType</span><span class="w"> </span><span class="n">symbolType</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="nf">operator</span><span class="p">()(</span><span class="k">const</span><span class="w"> </span><span class="n">Symbol</span><span class="o">&amp;</span><span class="w"> </span><span class="n">symbol</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">symbol</span><span class="p">.</span><span class="n">filePath</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">filepath</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">symbol</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">symbol</span><span class="p">.</span><span class="n">symbolType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">symbolType</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span><span class="w"> </span><span class="nf">resources_dir</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span><span class="p">{</span><span class="n">TEST_BINARY_DIR</span><span class="p">}</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;parsing.tests.resources&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">TestParameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">DependencyGraph</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="n">oss</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Symbol</span><span class="o">&amp;</span><span class="w"> </span><span class="n">symbol</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">SymbolType</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">representation</span><span class="p">{{</span><span class="n">SymbolType</span><span class="o">::</span><span class="n">TypeDefinition</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;TypeDefinition&quot;</span><span class="p">},</span>
+<span class="w">                                                           </span><span class="p">{</span><span class="n">SymbolType</span><span class="o">::</span><span class="n">TypeDeclaration</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;TypeDeclaration&quot;</span><span class="p">},</span>
+<span class="w">                                                           </span><span class="p">{</span><span class="n">SymbolType</span><span class="o">::</span><span class="n">FunctionDefinition</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;FunctionDefinition&quot;</span><span class="p">},</span>
+<span class="w">                                                           </span><span class="p">{</span><span class="n">SymbolType</span><span class="o">::</span><span class="n">FunctionDeclaration</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;FunctionDeclaration&quot;</span><span class="p">},</span>
+<span class="w">                                                           </span><span class="p">{</span><span class="n">SymbolType</span><span class="o">::</span><span class="n">VariableDefinition</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;VariableDefinition&quot;</span><span class="p">},</span>
+<span class="w">                                                           </span><span class="p">{</span><span class="n">SymbolType</span><span class="o">::</span><span class="n">VariableDeclaration</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;VariableDeclaration&quot;</span><span class="p">}};</span>
+
+<span class="w">    </span><span class="n">oss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">symbol</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; - &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">representation</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">symbol</span><span class="p">.</span><span class="n">symbolType</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; (&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">symbol</span><span class="p">.</span><span class="n">filePath</span><span class="p">.</span><span class="n">filename</span><span class="p">().</span><span class="n">string</span><span class="p">()</span>
+<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">symbol</span><span class="p">.</span><span class="n">line</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;,&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">symbol</span><span class="p">.</span><span class="n">column</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;)&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">oss</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="n">oss</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Dependencies</span><span class="o">&amp;</span><span class="w"> </span><span class="n">dependencies</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">oss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;{&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dependencies</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">dependencies</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">dependencies</span><span class="p">.</span><span class="n">begin</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">oss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="n">oss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">oss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;}&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">oss</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">compare_maps</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">DependencyGraph</span><span class="o">&amp;</span><span class="w"> </span><span class="n">actual</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">DependencyGraph</span><span class="o">&amp;</span><span class="w"> </span><span class="n">expected</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">ostringstream</span><span class="w"> </span><span class="n">oss</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">symbol</span><span class="p">,</span><span class="w"> </span><span class="n">dependencies</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">actual</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">expected</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="n">symbol</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">oss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Extra symbol in actual&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">symbol</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;with dependencies&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dependencies</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expected</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">symbol</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">dependencies</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">oss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Mismatched dependencies for symbol &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">symbol</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;where actual =&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dependencies</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;and expected = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">expected</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">symbol</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">symbol</span><span class="p">,</span><span class="w"> </span><span class="n">dependencies</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">expected</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">actual</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="n">symbol</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">oss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Missing symbol in actual&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">symbol</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;with dependencies&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dependencies</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">oss</span><span class="p">.</span><span class="n">str</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">check_dependency_graph</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span><span class="o">&amp;</span><span class="w"> </span><span class="n">resourcePath</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">DependencyGraph</span><span class="o">&amp;</span><span class="w"> </span><span class="n">expectedGraph</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">DependencyGraph</span><span class="o">&gt;</span><span class="w"> </span><span class="n">graphOption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parse_translation_unit</span><span class="p">(</span><span class="n">resourcePath</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">graphOption</span><span class="p">.</span><span class="n">has_value</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">DependencyGraph</span><span class="o">&amp;</span><span class="w"> </span><span class="n">actualGraph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">graphOption</span><span class="p">.</span><span class="n">value</span><span class="p">();</span>
+<span class="w">      </span><span class="n">INFO</span><span class="p">(</span><span class="n">compare_maps</span><span class="p">(</span><span class="n">actualGraph</span><span class="p">,</span><span class="w"> </span><span class="n">expectedGraph</span><span class="p">));</span>
+<span class="w">      </span><span class="n">REQUIRE</span><span class="p">((</span><span class="n">expectedGraph</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">actualGraph</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">FAIL</span><span class="p">(</span><span class="s">&quot;parse_translation_unit failed to parse&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">resourcePath</span><span class="p">.</span><span class="n">string</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">get_symbol_constructor</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span><span class="o">&amp;</span><span class="w"> </span><span class="n">resourcePath</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">[</span><span class="n">resourcePath</span><span class="p">](</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">line</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">column</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">SymbolType</span><span class="w"> </span><span class="n">symbolType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">Symbol</span><span class="p">{.</span><span class="n">filePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resourcePath</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">line</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">column</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">symbolType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">symbolType</span><span class="p">};</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace</span>
+
+<span class="n">TEST_CASE</span><span class="p">(</span><span class="s">&quot;function_call&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span><span class="w"> </span><span class="n">resourcePath</span><span class="p">{</span><span class="n">resources_dir</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;function_call.cpp&quot;</span><span class="p">};</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">symbol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_symbol_constructor</span><span class="p">(</span><span class="n">resourcePath</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Symbol</span><span class="w"> </span><span class="n">functionDefinition</span><span class="p">{</span><span class="n">symbol</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;function&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SymbolType</span><span class="o">::</span><span class="n">FunctionDefinition</span><span class="p">)};</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Symbol</span><span class="w"> </span><span class="n">mainDefinition</span><span class="p">{</span><span class="n">symbol</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;main&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SymbolType</span><span class="o">::</span><span class="n">FunctionDefinition</span><span class="p">)};</span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">DependencyGraph</span><span class="w"> </span><span class="n">expectedGraph</span><span class="p">{{</span><span class="n">functionDefinition</span><span class="p">,</span><span class="w"> </span><span class="p">{}},</span><span class="w"> </span><span class="p">{</span><span class="n">mainDefinition</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">functionDefinition</span><span class="p">}}};</span>
+
+<span class="w">  </span><span class="n">check_dependency_graph</span><span class="p">(</span><span class="n">resourcePath</span><span class="p">,</span><span class="w"> </span><span class="n">expectedGraph</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">TEST_CASE</span><span class="p">(</span><span class="s">&quot;struct_reference&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span><span class="w"> </span><span class="n">resourcePath</span><span class="p">{</span><span class="n">resources_dir</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;struct_reference.cpp&quot;</span><span class="p">};</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">symbol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_symbol_constructor</span><span class="p">(</span><span class="n">resourcePath</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Symbol</span><span class="w"> </span><span class="n">structDefinition</span><span class="p">{</span><span class="n">symbol</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Structure&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SymbolType</span><span class="o">::</span><span class="n">TypeDefinition</span><span class="p">)};</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Symbol</span><span class="w"> </span><span class="n">mainDefinition</span><span class="p">{</span><span class="n">symbol</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;main&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SymbolType</span><span class="o">::</span><span class="n">FunctionDefinition</span><span class="p">)};</span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">DependencyGraph</span><span class="w"> </span><span class="n">expectedGraph</span><span class="p">{{</span><span class="n">structDefinition</span><span class="p">,</span><span class="w"> </span><span class="p">{}},</span><span class="w"> </span><span class="p">{</span><span class="n">mainDefinition</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">structDefinition</span><span class="p">}}};</span>
+
+<span class="w">  </span><span class="n">check_dependency_graph</span><span class="p">(</span><span class="n">resourcePath</span><span class="p">,</span><span class="w"> </span><span class="n">expectedGraph</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">TEST_CASE</span><span class="p">(</span><span class="s">&quot;struct_forward_declaration&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span><span class="w"> </span><span class="n">resourcePath</span><span class="p">{</span><span class="n">resources_dir</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;struct_forward_declaration.cpp&quot;</span><span class="p">};</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">symbol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_symbol_constructor</span><span class="p">(</span><span class="n">resourcePath</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Symbol</span><span class="w"> </span><span class="n">definitionA</span><span class="p">{</span><span class="n">symbol</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SymbolType</span><span class="o">::</span><span class="n">TypeDefinition</span><span class="p">)};</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Symbol</span><span class="w"> </span><span class="n">declarationB</span><span class="p">{</span><span class="n">symbol</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SymbolType</span><span class="o">::</span><span class="n">TypeDeclaration</span><span class="p">)};</span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">DependencyGraph</span><span class="w"> </span><span class="n">expectedGraph</span><span class="p">{{</span><span class="n">definitionA</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">declarationB</span><span class="p">}},</span><span class="w"> </span><span class="p">{</span><span class="n">declarationB</span><span class="p">,</span><span class="w"> </span><span class="p">{}}};</span>
+
+<span class="w">  </span><span class="n">check_dependency_graph</span><span class="p">(</span><span class="n">resourcePath</span><span class="p">,</span><span class="w"> </span><span class="n">expectedGraph</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Slaven Glumac.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
