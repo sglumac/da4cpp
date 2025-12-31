@@ -15,17 +15,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Doxygen
-        run: sudo apt-get install -y doxygen graphviz
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-      - name: Create docs output directory
-        run: mkdir -p build/docs/doxygen
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen graphviz plantuml
+          pip install -r requirements_docs.txt
 
-      - name: Generate Doxygen documentation
-        run: doxygen Doxyfile
+      - name: Build documentation
+        run: |
+          chmod +x build_docs.sh
+          ./build_docs.sh
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/docs/doxygen/html
+          publish_dir: ./docs/_build/html

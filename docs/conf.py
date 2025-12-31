@@ -3,29 +3,26 @@ copyright = '2025, Slaven Glumac'
 author = 'Slaven Glumac'
 release = '0.0.1'
 
-# General configuration
-templates_path = ['_templates']
-exclude_patterns = []
-
-extensions = [
-    'breathe',
-    'exhale'
-]
+extensions = ['breathe', 'exhale']
 
 # Breathe configuration
 breathe_projects = {"da4cpp": "../build/docs/doxygen/xml"}
 breathe_default_project = "da4cpp"
 
-# Exhale configuration
+# Exhale configuration - MANUAL MODE
 exhale_args = {
     "containmentFolder": "./api",
     "rootFileName": "library_root.rst",
-    "doxygenStripFromPath": "../",
+    "rootFileTitle": "API Reference",
+    "doxygenStripFromPath": "..",
+    
+    # CRITICAL: Manual mode
+    "exhaleExecutesDoxygen": False,  # You run Doxygen separately
+    
+    # Optional but useful
     "createTreeView": True,
-    "exhaleExecutesDoxygen": False,
+    "verboseBuild": True,
 }
 
-# HTML output
 html_theme = 'sphinx_rtd_theme'
-html_static_path = ['_static']
- 
+

@@ -1,7 +1,10 @@
 build
+_build
+docs/api
 .vscode
 cpm_modules
 .DS_Store
 *.profraw
 compile_commands.json
+.venv
 
