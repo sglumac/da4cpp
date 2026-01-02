@@ -1,4 +1,5 @@
 build
+Session.vim
 _build
 docs/api
 .vscode

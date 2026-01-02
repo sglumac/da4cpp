@@ -7,12 +7,7 @@ add_subdirectory(da4cpp)
 # da4cpp #
 ##########
 add_library(da4cpp da4cpp.cpp)
-target_link_libraries(da4cpp graph parsing target_default_options)
+target_link_libraries(da4cpp da4cpp::graph da4cpp::parsing target_default_options)
 target_include_directories(da4cpp PUBLIC ${CMAKE_SOURCE_DIR}/src)
-
-##############
-# run_da4cpp #
-##############
-add_executable(run_da4cpp main.cpp)
-target_link_libraries(run_da4cpp da4cpp target_default_options)
+add_library(da4cpp::da4cpp ALIAS da4cpp)
 

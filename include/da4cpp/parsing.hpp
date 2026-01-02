@@ -1,9 +1,9 @@
+#ifndef DA4CPP_PARSING_H
+#define DA4CPP_PARSING_H
+
 #include <da4cpp/graph.hpp>
 #include <filesystem>
 #include <optional>
-
-#ifndef DA4CPP_PARSING_H
-#  define DA4CPP_PARSING_H
 
 namespace da4cpp::parsing {
 
