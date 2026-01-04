@@ -26,6 +26,8 @@ include(CTest)
 enable_testing()
 
 add_library(target_default_options INTERFACE)
+target_include_directories(target_default_options INTERFACE ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(target_default_options INTERFACE ${CMAKE_SOURCE_DIR}/src)
 target_default_cxx_flags(target_default_options INTERFACE
   WARNINGS_AS_ERRORS ${WARNINGS_AS_ERRORS}
   CODE_COVERAGE ${CODE_COVERAGE}
