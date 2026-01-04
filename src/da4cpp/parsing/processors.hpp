@@ -2,6 +2,7 @@
 #define DA4CPP_PARSING_HANDLERS_PROCESSORS_H
 
 #include <clang-c/Index.h>
+
 #include <da4cpp/graph.hpp>
 
 namespace da4cpp::parsing::handlers::processors {
@@ -44,7 +45,6 @@ namespace da4cpp::parsing::handlers::processors {
    */
   SymbolAndDependencies process_function_definition(const CXCursor &cursor);
 
-}  // namespace da4cpp::parsing::handlers::filters
+}  // namespace da4cpp::parsing::handlers::processors
 
-#endif // DA4CPP_PARSING_HANDLERS_PROCESSORS_H
-
+#endif  // DA4CPP_PARSING_HANDLERS_PROCESSORS_H

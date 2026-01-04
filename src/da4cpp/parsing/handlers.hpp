@@ -2,6 +2,7 @@
 #define DA4CPP_PARSING_HANDLERS_H
 
 #include <clang-c/Index.h>
+
 #include <array>
 #include <da4cpp/graph.hpp>
 #include <da4cpp/parsing/filters.hpp>
@@ -27,18 +28,18 @@ namespace da4cpp::parsing::handlers {
    * @brief A struct that handles Clang cursors of a specific type.
    */
   struct CursorHandler {
-    CursorFilter filter; ///< Determines if a cursor should be processed.
-    CursorProcessor processor; ///< Processes the cursor if the filter returns true.
+    CursorFilter filter;        ///< Determines if a cursor should be processed.
+    CursorProcessor processor;  ///< Processes the cursor if the filter returns true.
   };
 
   /**
    * @brief A collection of CursorHandlers.
    */
-  inline constexpr auto cursorHandlers = std::to_array<CursorHandler>({
-         {.filter=filters::is_function_definition, .processor=processors::process_function_definition},
-         {.filter=filters::is_function_declaration, .processor=processors::process_function_declaration},
-         {.filter=filters::is_struct_declaration, .processor=processors::process_struct_declaration},
-         {.filter=filters::is_struct_definition, .processor=processors::process_struct_definition}});
+  inline constexpr auto cursorHandlers = std::to_array<CursorHandler>(
+      {{.filter = filters::is_function_definition, .processor = processors::process_function_definition},
+       {.filter = filters::is_function_declaration, .processor = processors::process_function_declaration},
+       {.filter = filters::is_struct_declaration, .processor = processors::process_struct_declaration},
+       {.filter = filters::is_struct_definition, .processor = processors::process_struct_definition}});
 
   /**
    * @brief A recursive function to traverse the AST and process relevant cursors.
@@ -54,6 +55,4 @@ namespace da4cpp::parsing::handlers {
   CXChildVisitResult visit_node(CXCursor cursor, [[maybe_unused]] CXCursor parent, CXClientData clientData);
 }  // namespace da4cpp::parsing::handlers
 
-#endif // DA4CPP_PARSING_HANDLERS_H
-
-
+#endif  // DA4CPP_PARSING_HANDLERS_H

@@ -49,5 +49,4 @@ namespace da4cpp::parsing::handlers::filters {
 
 }  // namespace da4cpp::parsing::handlers::filters
 
-#endif // DA4CPP_PARSING_HANDLERS_FILTERS_H
-
+#endif  // DA4CPP_PARSING_HANDLERS_FILTERS_H

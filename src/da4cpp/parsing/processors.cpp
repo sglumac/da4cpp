@@ -7,13 +7,13 @@
 #include <da4cpp/parsing/processors.hpp>
 
 namespace {
-  using da4cpp::parsing::handlers::filters::is_function_definition;
-  using da4cpp::parsing::handlers::filters::is_function_reference;
-  using da4cpp::parsing::handlers::filters::is_struct_reference;
   using da4cpp::graph::Dependencies;
   using da4cpp::graph::DependencyGraph;
   using da4cpp::graph::Symbol;
   using da4cpp::graph::SymbolType;
+  using da4cpp::parsing::handlers::filters::is_function_definition;
+  using da4cpp::parsing::handlers::filters::is_function_reference;
+  using da4cpp::parsing::handlers::filters::is_struct_reference;
 
   /**
    * @brief Converts a CXString to a std::string and disposes of the CXString.
@@ -142,7 +142,7 @@ namespace {
     }
     return CXChildVisit_Recurse;
   }
-} // namespace
+}  // namespace
 
 namespace da4cpp::parsing::handlers::processors {
 
@@ -151,7 +151,6 @@ namespace da4cpp::parsing::handlers::processors {
     const Dependencies dependencies{};
     return {definition, dependencies};
   }
-
 
   SymbolAndDependencies process_struct_definition(const CXCursor &cursor) {
     const Symbol definition = type_definition_from_cursor(cursor);
@@ -173,5 +172,4 @@ namespace da4cpp::parsing::handlers::processors {
     return {definition, dependencies};
   }
 
-} // namespace da4cpp::parsing::handlers
-
+}  // namespace da4cpp::parsing::handlers::processors

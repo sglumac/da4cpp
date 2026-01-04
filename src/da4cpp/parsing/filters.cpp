@@ -38,5 +38,4 @@ namespace da4cpp::parsing::handlers::filters {
     return clang_getCursorKind(cursor) == CXCursor_FunctionDecl && static_cast<bool>(clang_isCursorDefinition(cursor));
   }
 
-} // namespace da4cpp::parsing::handlers
-
+}  // namespace da4cpp::parsing::handlers::filters

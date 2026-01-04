@@ -35,7 +35,6 @@ using SymbolAndDependencies = std::pair<Symbol, Dependencies>;
 
 namespace {
 
-
   /**
    * @brief A recursive function to traverse the AST and process relevant cursors.
    *
@@ -48,7 +47,6 @@ namespace {
    */
   // NOLINTNEXTLINE(misc-unused-parameters,bugprone-easily-swappable-parameters)
   CXChildVisitResult visit_node(CXCursor cursor, [[maybe_unused]] CXCursor parent, CXClientData clientData) {
-
     auto *graph = static_cast<DependencyGraph *>(clientData);
 
     for (auto [condition, processor] : da4cpp::parsing::handlers::cursorHandlers) {
@@ -96,4 +94,3 @@ namespace da4cpp::parsing {
   }
 
 }  // namespace da4cpp::parsing
-
