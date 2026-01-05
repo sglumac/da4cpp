@@ -39,10 +39,10 @@ add_subdirectory(src)
 option(DA4CPP_BUILD_TESTS "Build the testing tree" ON)
 option(DA4CPP_BUILD_APPS "Build the applications" ON)
 if(DA4CPP_BUILD_TESTS)
-    add_subdirectory(tests)
+  add_subdirectory(tests)
 endif()
 if(DA4CPP_BUILD_APPS)
-    add_subdirectory(apps)
+  add_subdirectory(apps)
 endif()
 
 # ---- Create an installable target ----
